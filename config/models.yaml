@@ -1,0 +1,334 @@
+models:
+  - key: claude-haiku-4-5
+    label: Claude Haiku 4.5
+    provider: anthropic
+    model_name: claude-haiku-4-5-20251001
+    stem: claude-haiku-4-5
+    request_kwargs:
+      max_tokens: 2
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#F9C784"
+      linestyle: "-"
+
+  - key: claude-sonnet-4-5
+    label: Claude Sonnet 4.5
+    provider: anthropic
+    model_name: claude-sonnet-4-5-20250929
+    stem: claude-sonnet-4-5
+    request_kwargs:
+      max_tokens: 2
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#E67E22"
+      linestyle: "--"
+
+  - key: deepseek-v3.1
+    label: DeepSeek V3.1
+    provider: openrouter
+    model_name: deepseek/deepseek-chat-v3.1
+    stem: deepseek-v3.1
+    request_kwargs:
+      max_tokens: 1
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#5B4B8A"
+      linestyle: "-"
+
+  - key: deepseek-v3
+    label: DeepSeek V3
+    provider: openrouter
+    model_name: deepseek/deepseek-chat
+    stem: deepseek-v3
+    request_kwargs:
+      max_tokens: 1
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#A48DEB"
+      linestyle: "--"
+
+  - key: gemini-2.5-flash
+    label: Gemini 2.5 Flash
+    provider: google
+    model_name: gemini-2.5-flash
+    stem: gemini-2.5-flash
+    request_kwargs:
+      thinkingBudget: 0
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#F2D16B"
+      linestyle: "-"
+
+  - key: gemini-2.5-flash-lite
+    label: Gemini 2.5 Flash Lite
+    provider: google
+    model_name: gemini-2.5-flash-lite
+    stem: gemini-2.5-flash-lite
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#F9E69F"
+      linestyle: "--"
+
+  - key: gemini-2.5-pro
+    label: Gemini 2.5 Pro
+    provider: google
+    model_name: gemini-2.5-pro
+    stem: gemini-2.5-pro
+    request_kwargs:
+      max_tokens: 128
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#3E8E41"
+      linestyle: "-."
+
+  - key: gpt-4.1
+    label: GPT-4.1
+    provider: openai
+    model_name: gpt-4.1
+    stem: gpt-4.1
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#52B788"
+      linestyle: "-."
+
+  - key: gpt-4.1-mini
+    label: GPT-4.1 Mini
+    provider: openai
+    model_name: gpt-4.1-mini
+    stem: gpt-4.1-mini
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#74C69D"
+      linestyle: ":"
+
+  - key: gpt-4.1-nano
+    label: GPT-4.1 Nano
+    provider: openai
+    model_name: gpt-4.1-nano
+    stem: gpt-4.1-nano
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#D9F0D3"
+      linestyle: [3, 1, 1, 1]
+
+  - key: gpt-4o
+    label: GPT-4o
+    provider: openai
+    model_name: gpt-4o
+    stem: gpt-4o
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#E88080"
+      linestyle: "-"
+
+  - key: gpt-4o-mini
+    label: GPT-4o Mini
+    provider: openai
+    model_name: gpt-4o-mini
+    stem: gpt-4o-mini
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#F5B8B8"
+      linestyle: "--"
+
+  - key: gpt-5
+    label: GPT-5
+    provider: openrouter
+    model_name: openai/gpt-5
+    stem: gpt-5
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#9C755F"
+      linestyle: "-"
+
+  - key: gpt-5-mini
+    label: GPT-5 Mini
+    provider: openrouter
+    model_name: openai/gpt-5-mini
+    stem: gpt-5-mini
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#BAB0AC"
+      linestyle: "--"
+
+  - key: gpt-5-nano
+    label: GPT-5 Nano
+    provider: openrouter
+    model_name: openai/gpt-5-nano
+    stem: gpt-5-nano
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#C7C7C7"
+      linestyle: "-."
+
+  - key: grok-4
+    label: Grok 4
+    provider: xai
+    model_name: grok-4
+    stem: grok-4
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#E07BB6"
+      linestyle: "-"
+
+  - key: grok-4-fast
+    label: Grok 4 Fast
+    provider: xai
+    model_name: grok-4-fast
+    stem: grok-4-fast
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#C24796"
+      linestyle: "--"
+
+  - key: llama-4-maverick
+    label: Llama 4 Maverick
+    provider: openrouter
+    model_name: meta-llama/llama-4-maverick
+    stem: llama-4-maverick
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#4A90E2"
+      linestyle: "-."
+
+  - key: llama-4-scout
+    label: Llama 4 Scout
+    provider: openrouter
+    model_name: meta-llama/llama-4-scout
+    stem: llama-4-scout
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#63B3FF"
+      linestyle: ":"
+
+  - key: gemma-2-9b-it-local
+    label: Gemma 2 9B
+    provider: local_logits
+    model_name: gemma-2-9b-it-local
+    stem: gemma-2-9b-it-local
+    model_path: models/gemma-2-9b-it-Q8_0.gguf
+    request_kwargs: {}
+    capabilities:
+      sampling: false
+      logit: true
+      self: false
+    plot:
+      color: "#6C8EAD"
+      linestyle: [8, 2]
+
+  - key: qwen-3.5-9b-local
+    label: Qwen 3.5 9B
+    provider: local_logits
+    model_name: qwen-3.5-9b-local
+    stem: qwen-3.5-9b-local
+    model_path: models/qwen3-8b-q8_0.gguf
+    request_kwargs: {}
+    capabilities:
+      sampling: false
+      logit: true
+      self: false
+    plot:
+      color: "#C06C84"
+      linestyle: [6, 2, 1.5, 2]
+
+  - key: llama-3.1-8b-instruct-local
+    label: Llama 3.1 8B
+    provider: local_logits
+    model_name: llama-3.1-8b-instruct-local
+    stem: llama-3.1-8b-instruct-local
+    model_path: models/Meta-Llama-3.1-8B-Instruct-Q5_K_M.gguf
+    fallback_model_paths:
+      - models/Meta-Llama-3.1-8B-Instruct-Q8_0.gguf
+    request_kwargs: {}
+    capabilities:
+      sampling: false
+      logit: true
+      self: false
+    plot:
+      color: "#386CB0"
+      linestyle: [5, 1]
+
+  - key: ministral-8b-instruct-local
+    label: Ministral 8B
+    provider: local_logits
+    model_name: ministral-8b-instruct-local
+    stem: ministral-8b-instruct-local
+    model_path: models/ministral-8b-instruct-Q8_0.gguf
+    request_kwargs: {}
+    capabilities:
+      sampling: false
+      logit: true
+      self: false
+    plot:
+      color: "#7B3294"
+      linestyle: [1, 1]

@@ -1,0 +1,140 @@
+\begin{table*}[p!]
+  \centering
+  \caption{Exact robustness and susceptibility values for Harm/Care. Values are mean $\pm$ standard error.}
+  \label{tab:metric_values_harm_care}
+  \small
+  \begin{tabular}{lcc}
+    \toprule
+    Model & $R$ & $S$ \\
+    \midrule
+    Claude Haiku 4.5 & $83.63 \pm 25.55$ & $0.684 \pm 0.042$ \\
+    Claude Sonnet 4.5 & $175.24 \pm 65.71$ & $0.596 \pm 0.037$ \\
+    DeepSeek V3 & $6.12 \pm 0.47$ & $0.568 \pm 0.049$ \\
+    DeepSeek V3.1 & $6.71 \pm 0.53$ & $0.524 \pm 0.040$ \\
+    GPT-4.1 & $14.83 \pm 1.30$ & $0.598 \pm 0.044$ \\
+    GPT-4.1 Mini & $12.46 \pm 1.19$ & $0.689 \pm 0.041$ \\
+    GPT-4.1 Nano & $9.31 \pm 1.09$ & $0.761 \pm 0.055$ \\
+    GPT-4o & $11.64 \pm 1.15$ & $0.661 \pm 0.045$ \\
+    GPT-4o Mini & $19.83 \pm 2.45$ & $0.502 \pm 0.053$ \\
+    Gemini 2.5 Flash & $17.08 \pm 2.46$ & $0.803 \pm 0.068$ \\
+    Gemini 2.5 Flash Lite & $38.22 \pm 7.60$ & $0.818 \pm 0.043$ \\
+    Grok 4 & $3.36 \pm 0.14$ & $0.623 \pm 0.038$ \\
+    Grok 4 Fast & $3.90 \pm 0.27$ & $0.792 \pm 0.065$ \\
+    Llama 4 Maverick & $7.41 \pm 0.64$ & $0.451 \pm 0.033$ \\
+    Llama 4 Scout & $9.48 \pm 1.11$ & $0.321 \pm 0.033$ \\
+    \bottomrule
+  \end{tabular}
+\end{table*}
+
+\begin{table*}[p!]
+  \centering
+  \caption{Exact robustness and susceptibility values for Fairness/Reciprocity. Values are mean $\pm$ standard error.}
+  \label{tab:metric_values_fairness_reciprocity}
+  \small
+  \begin{tabular}{lcc}
+    \toprule
+    Model & $R$ & $S$ \\
+    \midrule
+    Claude Haiku 4.5 & $268.89 \pm 126.54$ & $0.536 \pm 0.034$ \\
+    Claude Sonnet 4.5 & $79.78 \pm 21.13$ & $0.603 \pm 0.035$ \\
+    DeepSeek V3 & $5.79 \pm 0.38$ & $0.501 \pm 0.043$ \\
+    DeepSeek V3.1 & $7.43 \pm 0.67$ & $0.428 \pm 0.040$ \\
+    GPT-4.1 & $20.37 \pm 3.01$ & $0.611 \pm 0.055$ \\
+    GPT-4.1 Mini & $15.54 \pm 1.69$ & $0.618 \pm 0.052$ \\
+    GPT-4.1 Nano & $15.80 \pm 2.04$ & $0.588 \pm 0.050$ \\
+    GPT-4o & $10.42 \pm 0.93$ & $0.635 \pm 0.046$ \\
+    GPT-4o Mini & $17.14 \pm 1.90$ & $0.532 \pm 0.049$ \\
+    Gemini 2.5 Flash & $16.47 \pm 2.31$ & $0.627 \pm 0.077$ \\
+    Gemini 2.5 Flash Lite & $24.62 \pm 3.49$ & $0.685 \pm 0.033$ \\
+    Grok 4 & $4.38 \pm 0.24$ & $0.562 \pm 0.047$ \\
+    Grok 4 Fast & $5.44 \pm 0.53$ & $0.656 \pm 0.060$ \\
+    Llama 4 Maverick & $8.51 \pm 0.67$ & $0.373 \pm 0.026$ \\
+    Llama 4 Scout & $8.83 \pm 0.77$ & $0.337 \pm 0.022$ \\
+    \bottomrule
+  \end{tabular}
+\end{table*}
+
+\begin{table*}[p!]
+  \centering
+  \caption{Exact robustness and susceptibility values for In-group/Loyalty. Values are mean $\pm$ standard error.}
+  \label{tab:metric_values_in_group_loyalty}
+  \small
+  \begin{tabular}{lcc}
+    \toprule
+    Model & $R$ & $S$ \\
+    \midrule
+    Claude Haiku 4.5 & $78.17 \pm 18.64$ & $0.923 \pm 0.034$ \\
+    Claude Sonnet 4.5 & $112.50 \pm 31.78$ & $0.876 \pm 0.037$ \\
+    DeepSeek V3 & $2.98 \pm 0.10$ & $0.783 \pm 0.043$ \\
+    DeepSeek V3.1 & $3.89 \pm 0.22$ & $0.929 \pm 0.053$ \\
+    GPT-4.1 & $12.46 \pm 1.31$ & $1.013 \pm 0.039$ \\
+    GPT-4.1 Mini & $11.64 \pm 1.14$ & $0.974 \pm 0.041$ \\
+    GPT-4.1 Nano & $15.47 \pm 1.92$ & $0.683 \pm 0.055$ \\
+    GPT-4o & $9.51 \pm 0.75$ & $0.941 \pm 0.037$ \\
+    GPT-4o Mini & $13.79 \pm 1.42$ & $0.707 \pm 0.039$ \\
+    Gemini 2.5 Flash & $9.85 \pm 0.91$ & $1.199 \pm 0.047$ \\
+    Gemini 2.5 Flash Lite & $27.88 \pm 4.34$ & $0.893 \pm 0.042$ \\
+    Grok 4 & $3.96 \pm 0.21$ & $0.812 \pm 0.040$ \\
+    Grok 4 Fast & $3.07 \pm 0.14$ & $0.975 \pm 0.039$ \\
+    Llama 4 Maverick & $3.50 \pm 0.16$ & $0.856 \pm 0.035$ \\
+    Llama 4 Scout & $3.90 \pm 0.25$ & $0.845 \pm 0.045$ \\
+    \bottomrule
+  \end{tabular}
+\end{table*}
+
+\begin{table*}[p!]
+  \centering
+  \caption{Exact robustness and susceptibility values for Authority/Respect. Values are mean $\pm$ standard error.}
+  \label{tab:metric_values_authority_respect}
+  \small
+  \begin{tabular}{lcc}
+    \toprule
+    Model & $R$ & $S$ \\
+    \midrule
+    Claude Haiku 4.5 & $94.46 \pm 28.48$ & $0.773 \pm 0.043$ \\
+    Claude Sonnet 4.5 & $80.03 \pm 22.17$ & $0.872 \pm 0.048$ \\
+    DeepSeek V3 & $2.45 \pm 0.09$ & $0.772 \pm 0.043$ \\
+    DeepSeek V3.1 & $3.11 \pm 0.17$ & $0.932 \pm 0.047$ \\
+    GPT-4.1 & $13.98 \pm 1.48$ & $0.911 \pm 0.050$ \\
+    GPT-4.1 Mini & $9.71 \pm 0.77$ & $0.893 \pm 0.047$ \\
+    GPT-4.1 Nano & $11.36 \pm 1.21$ & $0.743 \pm 0.050$ \\
+    GPT-4o & $10.30 \pm 0.82$ & $0.807 \pm 0.042$ \\
+    GPT-4o Mini & $11.42 \pm 1.13$ & $0.734 \pm 0.041$ \\
+    Gemini 2.5 Flash & $7.44 \pm 0.76$ & $1.179 \pm 0.044$ \\
+    Gemini 2.5 Flash Lite & $26.83 \pm 4.15$ & $0.741 \pm 0.042$ \\
+    Grok 4 & $3.14 \pm 0.13$ & $0.862 \pm 0.040$ \\
+    Grok 4 Fast & $2.86 \pm 0.12$ & $1.000 \pm 0.045$ \\
+    Llama 4 Maverick & $3.48 \pm 0.17$ & $0.879 \pm 0.034$ \\
+    Llama 4 Scout & $3.77 \pm 0.23$ & $0.794 \pm 0.047$ \\
+    \bottomrule
+  \end{tabular}
+\end{table*}
+
+\begin{table*}[p!]
+  \centering
+  \caption{Exact robustness and susceptibility values for Purity/Sanctity. Values are mean $\pm$ standard error.}
+  \label{tab:metric_values_purity_sanctity}
+  \small
+  \begin{tabular}{lcc}
+    \toprule
+    Model & $R$ & $S$ \\
+    \midrule
+    Claude Haiku 4.5 & $65.48 \pm 14.38$ & $0.819 \pm 0.053$ \\
+    Claude Sonnet 4.5 & $147.09 \pm 48.34$ & $0.810 \pm 0.052$ \\
+    DeepSeek V3 & $2.23 \pm 0.08$ & $0.867 \pm 0.056$ \\
+    DeepSeek V3.1 & $2.75 \pm 0.16$ & $1.159 \pm 0.055$ \\
+    GPT-4.1 & $13.00 \pm 1.23$ & $0.973 \pm 0.067$ \\
+    GPT-4.1 Mini & $9.22 \pm 0.81$ & $0.958 \pm 0.063$ \\
+    GPT-4.1 Nano & $11.92 \pm 1.44$ & $0.841 \pm 0.059$ \\
+    GPT-4o & $7.77 \pm 0.58$ & $0.923 \pm 0.059$ \\
+    GPT-4o Mini & $8.34 \pm 0.70$ & $0.839 \pm 0.057$ \\
+    Gemini 2.5 Flash & $6.81 \pm 0.55$ & $1.406 \pm 0.071$ \\
+    Gemini 2.5 Flash Lite & $24.76 \pm 3.94$ & $0.910 \pm 0.051$ \\
+    Grok 4 & $2.42 \pm 0.09$ & $1.007 \pm 0.050$ \\
+    Grok 4 Fast & $2.58 \pm 0.11$ & $1.152 \pm 0.054$ \\
+    Llama 4 Maverick & $3.15 \pm 0.14$ & $0.972 \pm 0.040$ \\
+    Llama 4 Scout & $2.87 \pm 0.15$ & $1.039 \pm 0.044$ \\
+    \bottomrule
+  \end{tabular}
+\end{table*}
+
