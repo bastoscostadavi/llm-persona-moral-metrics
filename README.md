@@ -7,19 +7,21 @@ This repository implements a benchmark for measuring how large language models c
 
 ![Benchmark Overview](benchmark_overview.png)
 
+Two complementary workflows are supported:
+
+- **Sampling workflow**: collect repeated integer ratings, compute `U`, `R`, `S` at a chosen temperature, plot benchmark bars.
+
 <p align="center">
   <img src="results/plots/robustness_temp01.png" alt="Moral Robustness" width="49%" />
   <img src="results/plots/susceptibility_temp01.png" alt="Moral Susceptibility" width="49%" />
 </p>
 
+- **Logit/logprob workflow**: collect first-token digit score vectors once, then compute `U(T)`, `R(T)`, `S(T)` analytically across any temperature range and plot curves.
+
+
 <p align="center">
   <img src="results/plots/temperature_curves_robustness_susceptibility.png" alt="Temperature Curves" width="80%" />
 </p>
-
-Two complementary workflows are supported:
-
-- **Sampling workflow**: collect repeated integer ratings, compute `U`, `R`, `S` at a chosen temperature, plot benchmark bars.
-- **Logit/logprob workflow**: collect first-token digit score vectors once, then compute `U(T)`, `R(T)`, `S(T)` analytically across any temperature range and plot curves.
 
 ---
 
