@@ -1,22 +1,38 @@
 # Moral Susceptibility and Robutness Benchmark
 
-This repository implements a benchmark for measuring how large language models change their moral judgments under persona role-play. The benchmark uses the 30-item Moral Foundations Questionnaire (MFQ-30) and separates two effects:
+This repository implements the benchmark introduced in [[arXiv 2511.08565]](https://arxiv.org/abs/2511.08565). It measures how large language models change their moral judgments under persona role-play, using the 30-item Moral Foundations Questionnaire (MFQ-30) to separate two effects:
 
-- **Moral robustness**: how stable a model's ratings are when the same persona answers the same MFQ item repeatedly.
-- **Moral susceptibility**: how much the expected MFQ rating shifts across personas.
+- **Moral robustness (`R`)**: how stable a model's ratings are when the same persona answers the same MFQ item repeatedly.
+- **Moral susceptibility (`S`)**: how much the expected MFQ rating shifts across personas.
 
 ![Benchmark Overview](benchmark_overview.png)
 
-Two complementary workflows are supported:
 
-- **Sampling workflow**: collect repeated integer ratings, compute `U`, `R`, `S` at a chosen temperature, plot benchmark bars.
+## Benchmark Definition
+
+Each model answers all 30 MFQ items either as `self` (no persona prompt) or as a sampled persona from `personas.json`. For persona-conditioned runs, the benchmark treats each `(persona, question)` pair as a small response distribution. From that data it computes:
+
+- **Robustness** `R = 1/U`: the inverse of the average within-pair standard deviation. Higher means the model is more internally consistent when answering as a fixed persona (see the paper for detail).
+- **Susceptibility** `S`: the average across MFQ questions of the standard deviation of the persona-level mean scores (see the paper for detail). Higher means persona conditioning moves the model's expected answers more strongly.
+
+Metrics are computed with persona-bootstrap and rerun-bootstrap uncertainty estimates, decomposed across the five canonical moral foundations:
+
+- `Harm/Care`
+- `Fairness/Reciprocity`
+- `In-group/Loyalty`
+- `Authority/Respect`
+- `Purity/Sanctity`
+
+For measuring this quantities, two complementary workflows are supported:
+
+- **Sampling workflow**: collect repeated integer ratings, compute `R`, `S` at a chosen temperature, plot benchmark bars.
 
 <p align="center">
   <img src="results/plots/robustness_temp01.png" alt="Moral Robustness" width="49%" />
   <img src="results/plots/susceptibility_temp01.png" alt="Moral Susceptibility" width="49%" />
 </p>
 
-- **Logit/logprob workflow**: collect first-token digit score vectors once, then compute `U(T)`, `R(T)`, `S(T)` analytically across any temperature range and plot curves.
+- **Logit/logprob workflow**: collect next-token digit score vectors then compute `R(T)`, `S(T)` analytically across any temperature range and plot curves.
 
 
 <p align="center">
@@ -113,22 +129,6 @@ Output: `results/plots/temperature_curves_robustness_susceptibility.png`
 
 ---
 
-## Benchmark Definition
-
-Each model answers all 30 MFQ items either as `self` (no persona prompt) or as a sampled persona from `personas.json`. For persona-conditioned runs, the benchmark treats each `(persona, question)` pair as a small response distribution. From that data it computes:
-
-- **Robustness** `R = 1/U`: the inverse of the average within-pair standard deviation. Higher means the model is more internally consistent when answering as a fixed persona.
-- **Susceptibility** `S`: the average across MFQ questions of the standard deviation of the persona-level mean scores. Higher means persona conditioning moves the model's expected answers more strongly.
-
-Metrics are computed with persona-bootstrap and rerun-bootstrap uncertainty estimates, decomposed across the five canonical moral foundations:
-
-- `Harm/Care`
-- `Fairness/Reciprocity`
-- `In-group/Loyalty`
-- `Authority/Respect`
-- `Purity/Sanctity`
-
----
 
 ## Repository Layout
 
@@ -254,4 +254,21 @@ Pass `--force` to recompute all rows regardless.
 
 ## License
 
+
 Released under the MIT License. See `LICENSE` for details.
+
+---
+
+## Citation
+
+```bibtex
+@misc{costa2026moralsusceptibilityrobustnesspersona,
+      title={Moral Susceptibility and Robustness under Persona Role-Play in Large Language Models}, 
+      author={Davi Bastos Costa and Felippe Alves and Renato Vicente},
+      year={2026},
+      eprint={2511.08565},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2511.08565}, 
+}
+```
