@@ -1,0 +1,101 @@
+old_id,new_id,avg_distance,n_models,persona_text
+15,0,3.8561742963077044,15,A self-motivated student volunteering as a research subject to contribute to the understanding of learning processes
+52,1,4.074625056129344,15,A professor specializing in cognitive neuroscience and the effects of extreme environments on the brain
+11,2,4.087979450381698,15,An aspiring cognitive neuroscientist seeking guidance on understanding the relationship between the brain and consciousness
+32,3,4.110610411888957,15,A distinguished professor emeritus who has made significant contributions to the field of particle physics
+31,4,4.111317318404569,15,A college professor who specializes in cognitive psychology and supports their partner's mentoring efforts
+23,5,4.233061067698274,15,A retired mass media professor staying current with marketing trends through mentorship
+64,6,4.437585547794855,15,A computer science major who often debates the impact of technology on historical data preservation
+43,7,4.444461631664657,15,A political scientist writing a comprehensive analysis of global politics
+46,8,4.493689730329959,15,a tech-savvy receptionist at a wellness center
+63,9,4.5642536792139525,15,"A public policy major, focusing on healthcare disparities, inspired by their parent's work"
+59,10,4.604639130856489,15,"A middle-aged aspiring novelist and music enthusiast from Edinburgh, patiently working on a draft while sipping Scottish tea on rainy afternoons."
+69,11,4.6205827359477105,15,A video game developer who provides insider knowledge and references for the cosplayer's next character transformation
+79,12,4.643723991233018,15,A film studies professor who specializes in contemporary American television and has a deep appreciation for Elmore Leonard's work.
+90,13,4.678678903675954,13,A research associate who assists in analyzing retention data and identifying areas for improvement
+68,14,4.69897271549958,15,A college student studying e-commerce and aids in the family business's online transition
+91,15,4.779652566748814,15,A genealogist tracing the lineage of women who played influential roles during the Industrial Revolution
+10,16,4.825123851366996,15,a Slovenian industrial designer who has known Nika Zupanc since college
+48,17,4.8253322916762675,15,An experienced mobile app developer who is a minimalist.
+78,18,4.843735585079175,15,A retired historian interested in habitat laws and regulations in Texas.
+96,19,4.850685863683989,15,An insurance claims adjuster who benefited from the law professor's teachings
+33,20,4.856012726793883,15,A filmmaker who incorporates shadow play in their movies to create a mysterious atmosphere
+70,21,4.864316636977588,15,A shy introvert discovering their voice through the art of written stories
+6,22,4.889023244290133,15,A renowned world percussionist who shares their expertise and guidance
+80,23,4.889579055904038,15,A local health clinic director seeking guidance on improving healthcare access for underserved populations
+28,24,4.895855651819081,15,"Dr. Paul R. Gregory, a Research Fellow at Stanford University’s Hoover Institution, a Research Professor at the German Institute for Economic Research in Berlin, holds an endowed professorship in the Department of Economics at the University of Houston, and is emeritus chair of the International Advisory Board of the Kiev School of Economics."
+71,25,4.907460726205813,15,A renowned microbiologist who pioneered the field of bacterial metabolic engineering for biofuel
+77,26,4.913680560171189,15,An elderly retired professor who loves to learn and is interested in understanding the concept of remote work
+7,27,4.923552440530868,15,A Welsh aspiring screenwriter who has been following Roanne Bardsley's career for inspiration
+21,28,4.9594008782458605,15,A curious language enthusiast learning Latvian to better understand Baltic culture
+85,29,4.999215186343856,15,A English literature teacher trying to implement statistical analysis in grading writing assignments
+95,30,5.015707495075892,14,A dedicated music historian who helps research and uncover information about these obscure bands
+49,31,5.025825614322657,15,An eco-conscious local Miles from Fort Junction
+98,32,5.031863361996455,15,A medical professional who values personalized attention and relies on the sales representative's expertise to choose the best supplies for their practice
+38,33,5.0809747132567225,15,A talented artist who captures the fighter's journey through powerful illustrations
+2,34,5.094164964517745,15,A marketing manager who appreciates the web developer's ability to incorporate puns into their company's website content
+36,35,5.146337099545661,15,A fellow annoyed spouse who commiserates and shares funny anecdotes about their partners' obsessions
+29,36,5.232292951652818,14,A science writer who relies on the geologist's knowledge and explanations for their articles
+54,37,5.244019503474756,15,A massage therapist exploring the connection between breathwork and relaxation techniques
+18,38,5.273696142117275,15,A high school student aspiring to become an astronaut and eagerly consumes the blogger's content for inspiration
+39,39,5.282552827700593,15,A government official who consults the political scientist for expertise on crafting effective policy narratives
+40,40,5.355359330795897,15,"a middle-aged public health official in the United States, skeptical of non-transparent practices and prefers data-led decision making"
+62,41,5.359675929875462,15,A real estate agent who is always curious about the nomadic lifestyle of their relative
+99,42,5.361211309830932,15,"A museum curator specializing in ancient civilizations, constantly providing fascinating historical anecdotes during bridge sessions"
+30,43,5.371350992342079,15,A government official responsible for enforcing fair-trade regulations in the coffee industry
+55,44,5.393660163171532,15,A retired financial professional reflecting on industry peers.
+22,45,5.41110081490019,15,"A skilled tradesperson who provides vocational training in fields like construction, culinary arts, or automotive mechanics"
+0,46,5.477511200159452,15,A product manager focused on the integration of blockchain technology in financial services
+73,47,5.493268160517507,15,A Deaf teenager struggling with their identity and navigating the hearing world
+65,48,5.59067802597626,15,An Italian local record shop owner and music enthusiast.
+1,49,5.648034298148711,15,A hardcore Arknights fan who is always excited to introduce new anime fans to the series
+16,50,5.6777932755729354,15,A critic who argues that the author's reliance on plot twists distracts from character development
+17,51,5.706668225017698,15,An inspiring fifth-grade teacher who runs the after-school cooking club
+37,52,5.807614268432121,15,A retired principal of a Fresh Start school in England.
+66,53,5.808229746320927,15,A researcher who studies moose populations and provides insights on conservation efforts
+3,54,5.815196515995561,15,a senior tour guide specialized in Himalayan flora
+89,55,5.8174514752613335,15,A small business owner in the beauty industry who wants to attract a specific customer base
+41,56,5.835023959656295,15,A skilled jazz pianist who enjoys the challenge of interpreting gospel music
+97,57,5.847816065201882,15,A former military nurse who shares the passion for artisanal cheese and provides guidance on the business side
+26,58,5.89878967853275,15,A play-by-play announcer who excels at providing captivating player background stories during golf broadcasts
+9,59,5.914826020256423,15,A fellow book club member from a different country who has a completely different perspective on paranormal romance
+61,60,6.013690399344191,15,A materials scientist specializing in the development of ruggedized materials for extreme conditions
+34,61,6.0169334594538375,15,A dedicated chef always hunting for the perfect ingredients to improve their Mediterranean cuisine recipes
+92,62,6.078338980666901,15,A doctoral student in development economics from Uganda
+94,63,6.1229871649661165,15,A curriculum developer designing language courses that integrate effective pronunciation instruction
+58,64,6.179848321178226,15,A marketing executive who debates about the need for less political and more lifestyle content on the blog
+42,65,6.182402533389428,14,A project manager who is interested in the benefits of CSS Grid and wants guidance on implementing it in future projects
+13,66,6.221281121246279,15,"I'm an ardent hipster music lover, DJ, and professional dancer based in New York City."
+12,67,6.234339684005025,15,A disabled individual who relies on the services provided by Keystone Community Resources and greatly appreciates the employee's commitment and support
+57,68,6.254790068720805,15,I am a history teacher from Clare with a huge interest in local sports and cultural heritage.
+27,69,6.3502152414233795,15,A factory worker who is battling for compensation after being injured on the job due to negligence
+67,70,6.364377833980182,15,a professional iOS developer who loathes excessive typecasting
+35,71,6.488323247578486,15,A young woman who is overwhelmed with the idea of planning her own wedding
+51,72,6.4946069589898086,14,a big fan of Ryota Muranishi who follows his games faithfully
+93,73,6.5040277173125025,15,A mid-career Media Researcher in Ghana
+83,74,6.5651343107739555,15,A local real estate expert with extensive knowledge of the ancestral lands and its economic prospects
+4,75,6.620283504578471,15,An anthropologist exploring the cultural exchange between Viking and Irish communities through rituals and customs
+82,76,6.712462789358709,15,a Chinese retailer who sells on eBay
+44,77,6.840015300516771,14,a fangirl who has been following Elene's career from the start.
+84,78,6.8433828349845784,15,A prospective music student from a small town in middle America.
+56,79,6.867592931603637,15,A single mother who heavily relies on the mobile clinic for her family's healthcare needs and is grateful for the organizer's efforts
+53,80,7.002504596837724,15,an ardent supporter of the different approach of politics in Greece
+8,81,7.085821525650512,15,The mayor of a small town who believes that the arrival of the supermarket chain will bring economic growth and job opportunities
+24,82,7.086493082857701,15,A former Miami Marlins player who played alongside Conine and formed a strong bond of camaraderie
+14,83,7.34386739178089,15,a hardcore fan of the Real Salt Lake soccer team
+19,84,7.42348025509863,15,an aspiring Urdu poet from India
+5,85,7.554141454081301,15,A mission analyst who simulates and maps out the trajectories for space missions
+74,86,7.629643578856162,15,"A lifelong resident of Mexico City, who's elder and regularly visits Plaza Insurgentes."
+60,87,7.767603005289656,15,A real estate developer in Ho Chi Minh City who is always on the lookout for investment opportunities
+72,88,7.7726177116467285,15,A fresh business graduate in Pakistan
+86,89,7.7868180307121895,14,I am a skeptical statistician who is cautious about misinterpreting results from dimensionality reduction techniques.
+88,90,7.810729766750179,15,"A nostalgic local resident from Euxton, England who has a strong sense of community."
+50,91,8.10724733906382,15,A current resident of the mansion whose family has a long history with the property
+81,92,8.313817453989843,15,A skeptical pastor from a neighboring congregation who disagrees with the preacher's teachings
+20,93,8.744054669888163,15,A mainstream music producer who believes in sticking to industry norms and tested methods
+87,94,8.80151595070261,15,a 70-year-old veteran who served at Camp Holloway
+75,95,9.429517258114112,14,"an ultrAslan fan, the hardcore fan group of Galatasaray SK"
+47,96,9.455371371178849,15,a resident of Torregaveta who takes local pride seriously.
+45,97,9.784443946073967,15,An elderly Italian man who tends to be suspicious of modern banking tools and prefers cash transactions
+76,98,9.859555025851398,15,A deeply religious family member who values their faith and seeks to share it with others
+25,99,10.84221378262137,15,A traditionalist who firmly believes Christmas should be celebrated only in December
