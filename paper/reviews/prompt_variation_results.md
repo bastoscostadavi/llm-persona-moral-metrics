@@ -6,8 +6,8 @@ under 5 prompt templates.
 
 ## Protocol
 
-- **Model(s):** `gpt-4.1-mini` (complete, 100 personas), `claude-haiku-4-5`
-  (partial — 52 personas; see caveat below).
+- **Model(s):** `gpt-4.1-mini` (100 personas), `claude-haiku-4-5` (81 personas
+  after excluding cells the model declined to rate; see note below).
 - **Budget per variant:** 100 personas × 30 MFQ items × 10 repeated runs, T = 0.1.
 - **v0** = the exact original wording used in the paper. **v1–v4** paraphrase the
   persona-roleplay wrapper and the rating-scale framing; the MFQ item text and the
@@ -81,57 +81,59 @@ Purity/Sanctity are consistently the most susceptible; Fairness the least).
 
 ---
 
-## Results — `claude-haiku-4-5` (partial data, 52 personas)
+## Results — `claude-haiku-4-5` (81 personas)
 
-**Caveat:** the Anthropic API credit balance was exhausted mid-collection, so
-28–38% of cells per variant are missing. R and S are therefore computed on the
-**52 personas that are complete across all 5 variants** (vs. 100 for
-gpt-4.1-mini). This is the paper's standard subsample size, so the estimate is
-meaningful; numbers will tighten slightly once the full set is collected. The
-within-model comparison across wordings (the point of this analysis) is
-unaffected.
+**Note on parse failures / refusals.** Under some paraphrases, for a subset of
+personas Claude Haiku declines to output a rating and instead returns a verbal
+deflection ("I appreciate the question, but…"), which has no leading 0–5 digit.
+These are genuine non-responses, not truncation, and cannot be recovered by a
+larger token budget. Per-variant failure rate: v0 0.7%, v1 2.8%, v2 3.1%,
+v3 2.0%, v4 0.02%; the failures are concentrated in ~20 personas (e.g. ids 44,
+51, 95). Following the paper's per-model exclusion, R and S are computed on the
+**81 personas that are complete across all 5 variants** (vs. 100 for
+gpt-4.1-mini).
 
-### Overall R and S (value ± bootstrap SE, 52 shared personas)
+### Overall R and S (value ± bootstrap SE, 81 shared personas)
 
 | Variant | Robustness R | Susceptibility S |
 |---|---|---|
-| v0 (original) | 42.19 ± 4.63 | 0.696 ± 0.045 |
-| v1 (adopt persona) | 40.86 ± 4.73 | 0.640 ± 0.038 |
-| v2 (imagine you are) | 32.86 ± 3.32 | 0.599 ± 0.042 |
-| v3 (in the voice of) | 36.11 ± 3.73 | 0.601 ± 0.036 |
-| v4 (item/task/scale) | 42.08 ± 4.87 | 0.651 ± 0.045 |
+| v0 (original) | 44.21 ± 4.14 | 0.740 ± 0.032 |
+| v1 (adopt persona) | 37.43 ± 3.25 | 0.669 ± 0.028 |
+| v2 (imagine you are) | 33.98 ± 2.90 | 0.621 ± 0.029 |
+| v3 (in the voice of) | 34.60 ± 2.71 | 0.636 ± 0.026 |
+| v4 (item/task/scale) | 41.03 ± 3.50 | 0.689 ± 0.032 |
 
 **Spread across the 5 wordings:**
 
 | Metric | min | max | mean | SD | CV |
 |---|---|---|---|---|---|
-| R | 32.86 | 42.19 | 38.82 | 4.15 | 10.7% |
-| S | 0.599 | 0.696 | 0.638 | 0.040 | 6.3% |
+| R | 33.98 | 44.21 | 38.25 | 4.35 | 11.4% |
+| S | 0.621 | 0.740 | 0.671 | 0.047 | 7.0% |
 
-Claude Haiku is far more robust than gpt-4.1-mini (R ≈ 33–42 vs ≈ 10–14),
+Claude Haiku is far more robust than gpt-4.1-mini (R ≈ 34–44 vs ≈ 10–14),
 consistent with the model-family effect reported in the paper. The spread across
-prompt wordings is small (CV 10.7% for R, 6.3% for S) — even tighter than
+prompt wordings is small (CV 11.4% for R, 7.0% for S) — comparable to
 gpt-4.1-mini — and again no wording collapses R or zeroes out S.
 
 ### Per-foundation robustness R
 
 | Foundation | v0 | v1 | v2 | v3 | v4 |
 |---|---|---|---|---|---|
-| Harm/Care | 47.25 | 43.89 | 40.04 | 37.26 | 52.45 |
-| Fairness/Reciprocity | 82.45 | 54.73 | 60.89 | 78.41 | 55.78 |
-| In-group/Loyalty | 30.08 | 36.86 | 33.40 | 29.86 | 39.73 |
-| Authority/Respect | 38.53 | 36.32 | 25.28 | 27.22 | 34.37 |
-| Purity/Sanctity | 38.43 | 37.53 | 24.24 | 34.90 | 36.27 |
+| Harm/Care | 49.73 | 41.56 | 42.41 | 31.75 | 52.45 |
+| Fairness/Reciprocity | 73.23 | 40.52 | 46.30 | 53.43 | 57.47 |
+| In-group/Loyalty | 28.62 | 39.28 | 34.94 | 33.39 | 38.31 |
+| Authority/Respect | 50.44 | 32.39 | 28.19 | 28.47 | 35.57 |
+| Purity/Sanctity | 40.73 | 35.09 | 26.39 | 34.23 | 32.08 |
 
 ### Per-foundation susceptibility S
 
 | Foundation | v0 | v1 | v2 | v3 | v4 |
 |---|---|---|---|---|---|
-| Harm/Care | 0.712 | 0.613 | 0.486 | 0.557 | 0.557 |
-| Fairness/Reciprocity | 0.546 | 0.480 | 0.424 | 0.411 | 0.443 |
-| In-group/Loyalty | 0.823 | 0.739 | 0.680 | 0.717 | 0.784 |
-| Authority/Respect | 0.728 | 0.716 | 0.716 | 0.696 | 0.791 |
-| Purity/Sanctity | 0.672 | 0.651 | 0.690 | 0.627 | 0.681 |
+| Harm/Care | 0.693 | 0.580 | 0.482 | 0.547 | 0.520 |
+| Fairness/Reciprocity | 0.517 | 0.516 | 0.435 | 0.433 | 0.449 |
+| In-group/Loyalty | 0.907 | 0.762 | 0.710 | 0.762 | 0.815 |
+| Authority/Respect | 0.761 | 0.738 | 0.713 | 0.719 | 0.828 |
+| Purity/Sanctity | 0.823 | 0.747 | 0.767 | 0.721 | 0.831 |
 
 ---
 
