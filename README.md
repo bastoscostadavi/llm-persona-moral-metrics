@@ -256,19 +256,3 @@ Pass `--force` to recompute all rows regardless.
 
 
 Released under the MIT License. See `LICENSE` for details.
-
----
-
-## Citation
-
-```bibtex
-@misc{costa2026moralsusceptibilityrobustnesspersona,
-      title={Moral Susceptibility and Robustness under Persona Role-Play in Large Language Models}, 
-      author={Davi Bastos Costa and Felippe Alves and Renato Vicente},
-      year={2026},
-      eprint={2511.08565},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2511.08565}, 
-}
-```

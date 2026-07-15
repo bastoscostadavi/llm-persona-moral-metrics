@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[submission]{colm2026_conference}
+\usepackage[preprint]{colm2026_conference}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -29,7 +29,7 @@
 \definecolor{darkblue}{rgb}{0, 0, 0.5}
 \hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue, urlcolor=darkblue}
 
-\graphicspath{{figures/}{results/}{../../results/plots/}}
+\graphicspath{{figures/}}
 
 % Listings setup for prompt blocks (two-column friendly, no boxes)
 \lstset{
@@ -50,9 +50,10 @@
 \title{Moral Susceptibility and Robustness under Persona Role-Play in Large Language Models}
 
 \author{
-Davi Bastos Costa \And Felippe Alves \And Renato Vicente \\
+Davi Bastos Costa, Felippe Alves, and Renato Vicente \\
 TELUS Digital Research Hub, Center for Artificial Intelligence and Machine Learning \\
-Institute of Mathematics, Statistics and Computer Science, University of S\~ao Paulo
+Institute of Mathematics, Statistics and Computer Science, University of S\~ao Paulo\\
+\{davi.costa,\ felippe.pereira,\ rvicente\}@usp.br
 }
 
 \begin{document}
@@ -65,7 +66,7 @@ Institute of Mathematics, Statistics and Computer Science, University of S\~ao P
 \maketitle
 
 \begin{abstract}
-  Large language models (LLMs) increasingly operate in social contexts, motivating analysis of how they express and shift moral judgments. In this work, we investigate the moral response of LLMs to persona role-play, prompting a LLM to assume a specific character. Using the Moral Foundations Questionnaire (MFQ), we introduce a benchmark that quantifies two properties: moral susceptibility and moral robustness, defined from the variability of MFQ scores across and within personas, respectively. We estimate these quantities with two complementary procedures, repeated sampling and a logit-based method that directly estimates the rating distribution and enables temperature analysis. We evaluate 15 models spanning six families: Claude, DeepSeek, Gemini, GPT, Grok, and Llama. We find that, for moral robustness, model family accounts for most of the variance, while model size shows no systematic effect. The Claude family is, by a significant margin, the most robust, followed by Gemini and GPT models, with DeepSeek, Grok, and Llama families exhibiting lower robustness. For moral susceptibility, model family shows no clear effect, while larger variants tend to be mildly more susceptible within families. Additionally, we present moral foundation profiles for models without persona role-play and for personas averaged across models. Together, these analyses provide a systematic view of how persona conditioning shapes moral behavior in LLMs.
+  Large language models (LLMs) increasingly operate in social contexts, motivating analysis of how they express and shift moral judgments. In this work, we investigate the moral response of LLMs to persona role-play, prompting a LLM to assume a specific character. Using the Moral Foundations Questionnaire (MFQ), we introduce a benchmark that quantifies two properties: moral susceptibility and moral robustness, defined from the variability of MFQ scores across- and within-personas. We estimate these quantities with two complementary procedures, repeated sampling and a logit-based method that directly estimates the rating distributions and enables temperature analysis. We evaluate 15 models across six families: Claude, DeepSeek, Gemini, GPT, Grok, and Llama. The two metrics show qualitatively different patterns. Moral robustness varies by more than an order of magnitude, with a coefficient of variation of about $152\%$, and is explained almost entirely by model family. The Claude family is, by a significant margin, the most robust, about 30 times more so than the lower-performing families (DeepSeek, Grok, and Llama), while Gemini and GPT occupy an intermediate tier. This strong family dependence suggests that robustness is primarily shaped by post-training. Moral susceptibility, by contrast, spans a much narrower range, with a coefficient of variation of about $13\%$, and the most susceptible model is only 1.6 times more susceptible than the least. Unlike robustness, susceptibility shows no clear family dependence, suggesting that it is primarily determined by pre-training.  Additionally, we present moral foundation profiles for models without persona role-play and for personas averaged across models. Together, these analyses provide a systematic view of how persona conditioning shapes moral behavior in LLMs and a window into the internal machinery they use to instantiate personas.
 \end{abstract}
 
 
@@ -74,149 +75,10 @@ As large language models (LLMs) move into interactive, multi-agent settings, rel
 
 This paper introduces a benchmark that combines persona role-play---prompting a LLM to assume a specific character---with the Moral Foundations Questionnaire \citep{moralfoundations2017questionnaires}, a widely used instrument in moral psychology that measures five moral foundations: Harm/Care, Fairness/Reciprocity, In-group/Loyalty, Authority/Respect, and Purity/Sanctity \citep{graham2009liberals,haidt2007when,moralfoundations2017questionnaires}. We elicit LLMs to respond to the MFQ while role-playing personas drawn from \citet{ge2025scalingsyntheticdatacreation}. From these responses, we define two complementary quantities: moral robustness, the within-persona stability of MFQ scores under repeated sampling (averaged across personas), and moral susceptibility, the sensitivity of MFQ scores to persona variation. Operationally, we estimate these quantities in two ways: the main benchmark uses repeated sampling, which applies uniformly across queried models, while a complementary logit-based procedure is available for models that expose next-token distributions and provides a more direct estimate of the induced rating distribution. See Fig.~\ref{fig:mfq-susceptibility-robustness} for a conceptual overview diagram. These metrics are defined in Eq.~\eqref{eq:robustness} and Eq.~\eqref{eq:overall-susceptibility}, each with foundation-level decompositions and uncertainty estimates. 
 
-\begin{figure*}[t!]
-  \centering
-  \definecolor{suscolor}{HTML}{4A90E2} % Gemini palette
-  \definecolor{robcolor}{HTML}{E67E22} % Claude-Sonnet palette
-  \definecolor{promptcolor}{HTML}{4A90E2}
-  \definecolor{modelcolor}{HTML}{E67E22}
-  \definecolor{ratingcolor}{HTML}{52B788}
-  \definecolor{datacolor}{HTML}{F9E79F}
-  \definecolor{susbgcolor}{HTML}{BDA0E3}
-  \resizebox{\textwidth}{!}{%
-  \begin{tikzpicture}[
-    font=\small,
-    node distance=12mm and 18mm,
-    % styles
-    box/.style = {draw, rounded corners, inner sep=6pt, align=left},
-    persona/.style = {draw=modelcolor!50!black, rounded corners=3pt, inner xsep=6pt, inner ysep=3pt, align=left, text=black, fill=modelcolor!25},
-    title/.style = {font=\bfseries},
-    arrow/.style = {line width=1pt, -{Latex[length=2.4mm,width=1.4mm]}},
-  ]
-  
-  % Persona stack (center)
-  \matrix (pers) [column sep=0mm, row sep=2mm] {
-    \node[persona] (p0) {\faUser\ \ Persona $0$}; \\
-    \node[persona] (p1) {\faUser\ \ Persona $1$}; \\
-    \node[inner ysep=3pt, inner xsep=2pt] (dots) {$\vdots$}; \\
-    \node[persona] (plast) {\faUser\ \ Persona $|\mathcal{P}|$}; \\
-  };
-
-  % Susceptibility box around personas (background layer so text stays visible)
-  \begin{pgfonlayer}{background}
-    \node[draw=susbgcolor!70!black, rounded corners, fill=susbgcolor!40,
-          fit=(p0) (p1) (dots) (plast), inner xsep=12pt, inner ysep=10pt,
-          label={[title]above:Moral Susceptibility},
-          label={[text=black]below:Across-persona variability}] (susbox) {};
-  \end{pgfonlayer}
-
-  % Data block (vertical)
-  \node[draw=black, rounded corners, inner xsep=6pt, inner ysep=6pt, align=center, fill=datacolor!70, label={[title]above:Model}] (modelbox) [left=32mm of susbox] {
-    \begin{tikzpicture}[scale=0.42, line width=0.45pt]
-      \foreach \y [count=\i] in {0.75,-0.35,-1.45} {
-        \node[draw,circle,inner sep=1.2pt] (in\i) at (0,\y) {};
-      }
-      \foreach \y [count=\i] in {0.75,-0.35,-1.45} {
-        \node[draw,circle,inner sep=1.2pt] (hid\i) at (1,\y) {};
-      }
-      \foreach \y [count=\i] in {0.2,-0.9} {
-        \node[draw,circle,inner sep=1.2pt] (out\i) at (2,\y) {};
-      }
-      \foreach \i in {1,2,3} {
-        \foreach \j in {1,2,3} {
-          \draw (in\i) -- (hid\j);
-        }
-      }
-      \foreach \i in {1,2,3} {
-        \foreach \j in {1,2} {
-          \draw (hid\i) -- (out\j);
-        }
-      }
-    \end{tikzpicture}
-  };
-
-  \node[draw=black, rounded corners, inner xsep=6pt, inner ysep=6pt, align=left, fill=promptcolor!18, label={[title]above:Prompt}] (promptbox) [above=10mm of modelbox] {
-    \begin{tabular}{@{}l@{}}
-      \strut \faUser\ Persona\\[4pt]
-      \strut \faFile\ MFQ
-    \end{tabular}
-  };
-
-  \node[draw=black, rounded corners, inner xsep=6pt, inner ysep=6pt, align=center, fill=ratingcolor!22, label={[title]above:MFQ Scores}] (scorebox) [below=14mm of modelbox] {
-    \begin{tikzpicture}[x=3.8mm, y=4.8mm, baseline=(current bounding box.center)]
-      \draw[black!55] (-0.2,0) -- (5.2,0);
-      \foreach \x/\y in {0/0.08,1/0.34,2/0.78,3/0.78,4/0.34,5/0.08} {
-        \draw[black!45] (\x,0.03) -- (\x,-0.07);
-        \fill[ratingcolor!85!black] (\x,\y) circle (1.3pt);
-        \node[font=\scriptsize, below=2pt] at (\x,-0.07) {$\x$};
-      }
-    \end{tikzpicture}
-  };
-
-  \coordinate (promptarrowstart) at ($(promptbox.south)+(0,-8pt)$);
-  \coordinate (modelarrowend) at ($(modelbox.north)+(0,8pt)$);
-  \coordinate (modelarrowstart) at ($(modelbox.south)+(0,-13pt)$);
-  \coordinate (scorearrowend) at ($(scorebox.north)+(0,13pt)$);
-  \draw[arrow] (promptarrowstart) -- (modelarrowend);
-  \draw[arrow] (modelarrowstart) -- (scorearrowend);
-
-  % Robustness box (right)
-  \node[
-    box,
-    draw=robcolor,
-    text=black,
-    fill=modelcolor!14,
-    right=28mm of susbox,
-    anchor=center,
-    inner xsep=8pt,
-    inner ysep=8pt,
-    align=center
-  ] (runs) {%
-    \begin{tikzpicture}[x=4.8mm, y=7mm, baseline=(current bounding box.center)]
-      \draw[black!55] (-0.2,0) -- (6.2,0);
-      \foreach \x/\y in {0/0.08,1/0.28,2/0.68,3/1.00,4/0.68,5/0.28,6/0.08} {
-        \draw[black!45] (\x,0.03) -- (\x,-0.07);
-        \fill[robcolor] (\x,\y) circle (1.6pt);
-        \node[font=\scriptsize, below=2pt] at (\x,-0.07) {$\x$};
-      }
-      \draw[robcolor!80!black, line width=0.9pt, <->] (2,0.40) -- (4,0.40);
-    \end{tikzpicture}
-  };
-
-  % Robustness title above runs
-  \node[title, text=black, above=2mm of runs] {Moral Robustness};
-  \node[text=black, below=2mm of runs] {Within-persona variability};
-  
-  % Merge point for persona arrows before entering robustness box
-  \coordinate (merge) at ($(runs.center)+(-6mm,0)$);
-  \coordinate (p0merge) at ($(p0.east)!0.60!(merge)$);
-  \coordinate (p1merge) at ($(p1.east)!0.60!(merge)$);
-  \coordinate (plastmerge) at ($(plast.east)!0.60!(merge)$);
-  \coordinate (runsentry) at ($(runs.center)+(-1.5mm,0)$);
-
-  % Persona arrows converge at merge point, leaving a small gap before merging
-  \draw[arrow] (p0.east) -- (p0merge);
-  \draw[arrow] (p1.east) -- (p1merge);
-  \draw[arrow] (plast.east) -- (plastmerge);
-
-  % Overall analysis grouping
-  \coordinate (datatop) at ($(promptbox.north)+(0,6mm)$);
-  \coordinate (databottom) at ($(scorebox.south)+(0,-6mm)$);
-
-  \begin{pgfonlayer}{background}
-    \node[draw=black, rounded corners, fit=(promptbox) (modelbox) (scorebox) (datatop) (databottom), inner xsep=8pt, inner ysep=0pt, label={[title]below:Data}] (databox) {};
-    \node[draw=black, rounded corners, line width=0.9pt, fit=(susbox) (runs), inner xsep=28pt, inner ysep=26pt, label={[title]below:Benchmark}] (analysisbox) {};
-  \end{pgfonlayer}
-
-  
-  \end{tikzpicture}%
-  }% end \resizebox
-  \caption{Left: summary of our data collection pipeline: we elicit models to respond to the MFQ conditioned on a persona. Right: summary of our benchmark pipeline: robustness, Eq.~\ref{eq:robustness}, and susceptibility, Eq.~\ref{eq:overall-susceptibility}, are computed from within and across persona variability in MFQ scores, respectively.}
-  \label{fig:mfq-susceptibility-robustness}
-  \end{figure*}
+\input{figures/overview_figure}
   
 
-Applying this framework across 15 models spanning six families, we find that model family accounts for most of the variance in moral robustness, with no systematic effect of model size. For moral susceptibility, larger variants tend to be more susceptible within families, though this trend is mild. Among individual models, Claude Sonnet 4.5 is the most robust and Grok 4 Fast the least; Gemini 2.5 Flash is the most susceptible, while Llama 4 Scout is the least. Robustness and susceptibility are largely orthogonal at the model level (\(r \approx -0.03\)); the joint scatter reveals distinct family clusters rather than a monotonic trade-off, and foundation-level decompositions show that Purity/Sanctity is the only foundation where robustness and susceptibility are moderately negatively associated.
+Applying this framework across 15 models spanning six families, we find that moral robustness varies by more than an order of magnitude (coefficient of variation $\approx 152\%$), with this variation almost entirely accounted for by model family rather than size. We read this strong family dependence as evidence that robustness is primarily determined by post-training. Moral susceptibility behaves differently: it occupies a much narrower range (coefficient of variation $\approx 13\%$), shows no family dependence, and depends only mildly on size within families, consistent with susceptibility being primarily determined by pre-training. Among individual models, Claude Sonnet 4.5 is the most robust and Grok 4 Fast the least; Gemini 2.5 Flash is the most susceptible, while Llama 4 Scout is the least. Robustness and susceptibility are largely orthogonal at the model level (\(r \approx -0.03\)); the joint scatter reveals distinct family clusters rather than a monotonic trade-off, and foundation-level decompositions show that Purity/Sanctity is the only foundation where robustness and susceptibility are moderately negatively associated.
 
 Recent research has examined the moral and social behavior of LLMs through the lens of the MFQ, exploring their value orientations, cultural variability, and alignment with human moral judgments \citep{abdulhai-etal-2024-moral,nunes2024hypocrites,aksoy2024whose,bajpai2024insights,ji2025moralbenchmoralevaluationllms}. Parallel efforts study persona role-playing as a mechanism for conditioning model behavior, including benchmarks, interactive environments, and diagnostic analyses \citep{tseng2024two,wang2023rolellm,samuel2025personagym,yu2025rpgbench,xu2024character,elboudouri2025rpeval,bai2025concept}. Our MFQ persona framework bridges these directions by systematically quantifying how persona conditioning alters moral judgments, separating the effects of repeated sampling (moral robustness) from those of persona variation (moral susceptibility). In addition, we report MFQ profiles for both unconditioned and persona-conditioned settings, providing a comparative view of baseline moral tendencies and persona-driven moral shifts across models.
 
@@ -244,10 +106,9 @@ Figure~\ref{fig:mfq-profiles} illustrates the resulting foundation-level MFQ sco
   \label{fig:persona-mfq-profiles}
 \end{figure}
 
-Figure~\ref{fig:persona-mfq-profiles} compares the no-persona conditioning average moral profile with three persona-conditioned averages chosen to highlight large shifts in the radar. Persona 25 concentrates weight on Authority/Respect and Purity/Sanctity, persona 75 amplifies In-group/Loyalty and Fairness/Reciprocity, and persona 86 depresses all foundations, especially In-group/Loyalty, Authority/Respect, and Purity/Sanctity (see Appendix~\ref{app:personas} for the persona descriptions and Appendix~\ref{app:moral-foundation-profile} for the exact values). The full per-persona, per-model, and per-question MFQ ratings will be made available online if the paper is accepted.
-%are available in our GitHub repository \cite{costa2025llmms}.
+Figure~\ref{fig:persona-mfq-profiles} compares the no-persona conditioning average moral profile with three persona-conditioned averages chosen to highlight large shifts in the radar. Persona 25 concentrates weight on Authority/Respect and Purity/Sanctity, persona 75 amplifies In-group/Loyalty and Fairness/Reciprocity, and persona 86 depresses all foundations, especially In-group/Loyalty, Authority/Respect, and Purity/Sanctity (see Appendix~\ref{app:personas} for the persona descriptions and Appendix~\ref{app:moral-foundation-profile} for the exact values). The full per-persona, per-model, and per-question MFQ ratings are available in our GitHub repository \cite{costa2025llmms}.
 
-\subsection{Benchmark Definition}
+\subsection{Persona Moral Metrics}
 
 This section formalizes the benchmark quantities and the estimators we use in practice.
 
@@ -294,7 +155,6 @@ We use two complementary procedures to estimate the benchmark quantities above. 
   \item \textbf{Prompting:} For each persona and question, the model receives a role-playing instruction: ``You are roleplaying as the following persona:", followed by the persona description text and one of the $|\mathcal{Q}|=30$ MFQ questions.\footnote{We query one MFQ question at a time rather than the full questionnaire in a single prompt to avoid sequence- and order-dependent effects.} We instruct the models to start their response with the rating (an integer from 0 to 5), followed by their reasoning. Exact prompt templates are provided in Appendix~\ref{app:prompts}. We use decoding temperature $T=0.1$ to keep stochasticity consistent across models.
   \item \textbf{Models:} We included: Claude Haiku 4.5, Claude Sonnet 4.5, DeepSeek V3, DeepSeek V3.1, Gemini 2.5 Flash Lite, Gemini 2.5 Flash, GPT-4.1, GPT-4.1 Mini, GPT-4.1 Nano, GPT-4o, GPT-4o Mini, Grok 4, Grok 4 Fast, Llama 4 Maverick, and Llama 4 Scout.
   \item \textbf{Families:} We group the above models in the following families: Claude, DeepSeek, Gemini, GPT, Grok, and Llama.
-  %are available in our GitHub repository \cite{costa2025llmms}.
 \end{itemize}
 
 \subsubsection{Sampling}
@@ -343,7 +203,7 @@ For the subset of models where we collected next-token logits, we can additional
 \subsection{Model Rankings at \texorpdfstring{$T=0.1$}{T=0.1}}
 \label{sec:benchmark-ranking}
 
-Figure~\ref{fig:benchmark-bars} shows robustness and susceptibility separately as one-dimensional rankings at \(T=0.1\). The robustness panel makes the family structure immediately visible: the Claude models lead by a substantial margin, followed by Gemini and GPT-4 variants, while Grok, DeepSeek, and Llama remain less robust. The susceptibility panel has a much tighter spread, with Gemini 2.5 Flash and Grok 4 Fast among the most susceptible models and Llama 4 Scout among the least susceptible. This view is useful for direct model ranking, while the joint geometry of the two metrics is easier to inspect in the scatter map of Figure~\ref{fig:overall-rs-scatter}.
+Figure~\ref{fig:benchmark-bars} shows robustness and susceptibility separately as one-dimensional rankings at \(T=0.1\). The two metrics differ markedly in their across-model spread: robustness has a coefficient of variation of about 152\%, with the most robust model roughly 33 times more robust than the least, whereas susceptibility has a coefficient of variation of only about 13\%, with the most susceptible model just 1.6 times more susceptible than the least. The robustness panel makes the family structure immediately visible: the Claude models lead by a substantial margin, followed by Gemini and GPT-4 variants, while Grok, DeepSeek, and Llama remain less robust. The susceptibility panel has a much tighter spread, with Gemini 2.5 Flash and Grok 4 Fast among the most susceptible models and Llama 4 Scout among the least susceptible. This view is useful for direct model ranking, while the joint geometry of the two metrics is easier to inspect in the scatter map of Figure~\ref{fig:overall-rs-scatter}.
 
 \begin{figure*}[t!]
   \centering
@@ -375,9 +235,9 @@ Figure~\ref{fig:overall-rs-scatter} complements the benchmark rankings by displa
 \subsection{Family Structure and Size Trends}
 \label{sec:family-size-trends}
 
-The clustering visible in Figure~\ref{fig:overall-rs-scatter} can be quantified directly. On the 15 models displayed there, a one-way permutation ANOVA on \(\log R\) grouped by provider family (Claude, DeepSeek, Gemini, GPT, Grok, and Llama) yields \(\eta^2 = 0.963\) with permutation \(p < 2 \times 10^{-5}\), indicating that family membership explains nearly all of the observed robustness variation. In this ordering, the Claude models sit far above the rest, Gemini and GPT occupy an intermediate band, and Llama, DeepSeek, and Grok cluster at the low-robustness end.
+The clustering visible in Figure~\ref{fig:overall-rs-scatter} can be quantified directly. Robustness varies widely across the 15 benchmarked models, with a coefficient of variation of about 152\% and the most robust model (Claude Sonnet 4.5, $R\approx 108$) roughly 33 times more robust than the least (DeepSeek V3, Grok 4, and Grok 4 Fast, all near $R\approx 3.3$). A one-way permutation ANOVA on \(\log R\) grouped by provider family (Claude, DeepSeek, Gemini, GPT, Grok, and Llama) yields \(\eta^2 = 0.963\) with permutation \(p < 2 \times 10^{-5}\), indicating that family membership explains nearly all of this variation. In this ordering, the Claude models sit far above the rest, Gemini and GPT occupy an intermediate band, and Llama, DeepSeek, and Grok cluster at the low-robustness end. The combination of large across-model variance, near-complete family-level explanation, and absent size effect is evidence that robustness is primarily determined by post-training, reflecting alignment-stage choices rather than scale.
 
-A matching permutation ANOVA on \(S\) grouped by the same six families yields \(\eta^2 = 0.539\) with permutation \(p = 0.137\), indicating that the family structure in susceptibility is weaker and does not reach conventional significance at this sample size. The size trend in susceptibility is also weak. Across the within-family size series available in the benchmark, a family-fixed-effect regression gives a positive slope of \(\beta_S = 0.056 \pm 0.035\) susceptibility units per size-rank step, with incremental \(\Delta R^2 = 0.269\) and permutation \(p = 0.150\). The positive slope is consistent with a tendency for larger variants to be more susceptible, but the effect is mild and admits model-specific exceptions.
+Susceptibility behaves differently. Across the same 15 models, $S$ has a coefficient of variation of only about 13\%, and the most susceptible model (Gemini 2.5 Flash, $S\approx 1.04$) is only 1.6 times more susceptible than the least (GPT-4o Mini, $S\approx 0.66$). A matching permutation ANOVA on \(S\) grouped by the same six families yields \(\eta^2 = 0.539\) with permutation \(p = 0.137\), so the family structure in susceptibility is weaker and does not reach conventional significance at this sample size. The size trend is also weak. Because parameter counts are not publicly available for several closed-source models, we operationalize size with an ordinal within-series rank: rank 0 for the smallest variant in each series, incremented for each next-larger variant. The seven series in our benchmark are Claude 4.5 (Haiku, Sonnet), DeepSeek (V3, V3.1, a version progression), Gemini 2.5 Flash (Lite, full), GPT-4o (Mini, full), GPT-4.1 (Nano, Mini, full), Grok 4 (Fast, full), and Llama 4 (Scout, Maverick). Regressing $S$ on the within-series rank with a separate intercept per series gives a positive slope of \(\beta_S = 0.056 \pm 0.035\) susceptibility units per rank step (\(\Delta R^2 = 0.269\), permutation \(p = 0.150\)), consistent with a mild tendency for larger variants to be more susceptible but admitting model-specific exceptions. Together, the low across-model variance, the absent family structure, and the mild size dependence point to susceptibility being primarily determined by pre-training, reflecting statistical regularities of the shared text corpora and objectives behind modern LLMs rather than alignment-stage choices.
 
 \subsection{Foundation-Level Decomposition}
 \label{sec:foundation-rs-map}
@@ -399,16 +259,19 @@ To test whether robustness and susceptibility are coupled at the foundation leve
 \label{sec:discussion}
 
 \paragraph{Post-training as the driver of moral robustness.}
-The near-perfect family-level explanation of robustness variance ($\eta^2 = 0.963$) is difficult to attribute to scale alone, since model size shows no systematic effect while provider families remain sharply separated. This points to post-training---alignment fine-tuning, RLHF, and constitutional procedures---as a plausible primary determinant of moral robustness.
+Robustness varies widely across the benchmark (coefficient of variation $\approx 152\%$), and the near-perfect family-level explanation of this variance ($\eta^2 = 0.963$) is difficult to attribute to scale, since model size shows no systematic effect while provider families remain sharply separated. This points to post-training, including alignment fine-tuning, RLHF, and constitutional procedures, as a plausible primary determinant of moral robustness.
+
+\paragraph{Pre-training as the driver of moral susceptibility.}
+Susceptibility shows the opposite pattern. It varies little across the benchmark (coefficient of variation $\approx 13\%$), shows no family-level structure, and depends only mildly on size within families. The combination of low across-model variance, absent family effects, and weak size dependence is naturally explained by pre-training, including the shared text corpora and objectives that underlie modern LLMs, rather than by alignment-stage choices. Under this view, persona susceptibility reflects common statistical regularities in how text describes morally relevant traits, regularities that current alignment procedures leave largely intact.
 
 \paragraph{Constitutional AI and persona competence.}
 The Claude family's robustness advantage invites a more specific hypothesis. Constitutional AI \citep{bai2022constitutional} involves iterative self-critique against a set of principles, repeatedly exercising the model's ability to reason about how agents with different values would respond to moral scenarios. We conjecture that this training produces a more calibrated internal representation of each persona's moral reasoning, rather than mere resistance to persona conditioning. Consistent with this, Claude's susceptibility is not the lowest in the benchmark: it shifts meaningfully across personas, but does so with low within-persona variance.
 
 \paragraph{Future directions.}
-Extending the benchmark to other moral psychology instruments or richer persona sets would test whether the family-level robustness structure generalizes beyond the MFQ. More broadly, the benchmark supports alignment monitoring: because robustness and susceptibility are derived from a fixed instrument and fixed persona set, any training intervention leaves a signature in the $(R, S)$ plane that can be tracked across model versions, with distinct signatures corresponding to qualitatively different types of misalignment.
+A natural extension is to apply the benchmark to other moral psychology instruments and richer persona sets, to test how far the family-level robustness structure generalizes. Because $R$ and $S$ are derived from a fixed instrument and persona set, the $(R, S)$ plane can also be used to track and compare training interventions: each intervention leaves a signature in the plane, and distinct signatures correspond to qualitatively different effects \citep{costa2026personacollapse}.
 
 \section{Conclusion}
-We introduced a benchmark for measuring how persona role-play changes moral judgments in large language models using the Moral Foundations Questionnaire, separating within-persona variability (moral robustness) from across-persona variability (moral susceptibility) and estimating both quantities through repeated sampling, with a complementary logit-based procedure when next-token distributions are available. Across 15 models and six families, moral robustness shows a strong family structure, with Claude models substantially more robust than the rest and no systematic size effect, while moral susceptibility varies over a much narrower range and shows only a mild within-family size trend. At the model level, robustness and susceptibility are largely orthogonal, and the foundation-level decomposition shows that families concentrate persona sensitivity and inverse robustness in different moral foundations. Overall, persona conditioning reveals structured, model-dependent moral shifts rather than a single generic effect, providing a quantitative basis for future work on social reasoning and alignment evaluation under persona role-play.
+We introduced a benchmark for measuring how persona role-play changes moral judgments in large language models using the Moral Foundations Questionnaire, separating within-persona variability (moral robustness) from across-persona variability (moral susceptibility) and estimating both quantities through repeated sampling, with a complementary logit-based procedure when next-token distributions are available. Across 15 models and six families, moral robustness varies by more than an order of magnitude (coefficient of variation $\approx 152\%$), shows a strong family structure with Claude models substantially more robust than the rest, and is unaffected by size, suggesting that it is primarily determined by post-training. Moral susceptibility, in contrast, varies over a much narrower range (coefficient of variation $\approx 13\%$), shows no family dependence, and exhibits only a mild within-family size trend, suggesting that it is primarily determined by pre-training. At the model level, robustness and susceptibility are largely orthogonal, and the foundation-level decomposition shows that families concentrate persona sensitivity and inverse robustness in different moral foundations. Overall, persona conditioning reveals structured, model-dependent moral shifts rather than a single generic effect, providing a quantitative basis for future work on social reasoning and alignment evaluation under persona role-play.
 
 
 %\section*{Acknowledgments}
@@ -420,7 +283,7 @@ This paper presents work whose goal is to advance the understanding of moral beh
 
 \section*{Reproducibility Statement}
 
-All code, prompts, and processed results needed to reproduce our experiments will be made publicly available upon acceptance. The exact prompt formats used to query the models are detailed in Appendix~\ref{app:prompts}. The full list of personas is provided in Appendix~\ref{app:personas}. Raw model outputs, persona-level MFQ response matrices and logit vectors will also be shared.
+All code, prompts, and processed results needed to reproduce our experiments are publicly available in our GitHub repository \cite{costa2025llmms}. The exact prompt formats used to query the models are detailed in Appendix~\ref{app:prompts}. The full list of personas is provided in Appendix~\ref{app:personas}. Raw model outputs, persona-level MFQ response matrices and logit vectors are also included.
 
 \bibliographystyle{colm2026_conference}
 \bibliography{references}

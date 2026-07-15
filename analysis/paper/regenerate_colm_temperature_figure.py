@@ -60,7 +60,7 @@ def plot() -> None:
                 curve["susceptibility"] - curve["susceptibility_uncertainty"],
                 curve["susceptibility"] + curve["susceptibility_uncertainty"],
                 color=color,
-                alpha=0.12,
+                alpha=0.22,
                 linewidth=0,
             )
             axes[1].plot(
@@ -76,7 +76,7 @@ def plot() -> None:
                 curve["robustness"] - curve["robustness_uncertainty"],
                 curve["robustness"] + curve["robustness_uncertainty"],
                 color=color,
-                alpha=0.12,
+                alpha=0.22,
                 linewidth=0,
             )
 
@@ -87,12 +87,12 @@ def plot() -> None:
                 sampled["susceptibility"],
                 yerr=sampled["susceptibility_uncertainty"],
                 fmt="o",
-                markersize=4.6,
+                markersize=6.5,
                 color=color,
                 markeredgecolor="white",
                 markeredgewidth=0.5,
-                elinewidth=1.0,
-                capsize=2.0,
+                elinewidth=1.5,
+                capsize=3.5,
                 linestyle="none",
                 zorder=5,
             )
@@ -101,12 +101,12 @@ def plot() -> None:
                 sampled["robustness"],
                 yerr=sampled["robustness_uncertainty"],
                 fmt="o",
-                markersize=4.6,
+                markersize=6.5,
                 color=color,
                 markeredgecolor="white",
                 markeredgewidth=0.5,
-                elinewidth=1.0,
-                capsize=2.0,
+                elinewidth=1.5,
+                capsize=3.5,
                 linestyle="none",
                 zorder=5,
             )

@@ -45,6 +45,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--ous-metrics", type=Path, default=OUS_METRICS_CSV)
     parser.add_argument("--copy-to-paper", action="store_true",
                         help="Also copy the PDFs into paper/figures/.")
+    parser.add_argument("--exclude-models", nargs="*", default=None,
+                        help="Optional model stems to exclude from the comparison.")
     return parser.parse_args()
 
 
@@ -110,7 +112,8 @@ def main() -> None:
     mfq = _slice(args.mfq_metrics, args.temperature)
     ous = _slice(args.ous_metrics, args.temperature)
     # Compare every model that has both an MFQ and an OUS measurement.
-    shared = [m for m in ous.index if m in mfq.index]
+    excluded = set(args.exclude_models or [])
+    shared = [m for m in ous.index if m in mfq.index and m not in excluded]
     if not shared:
         raise RuntimeError(f"No models with both MFQ and OUS metrics at T={args.temperature}")
     mfq = mfq.loc[shared]
