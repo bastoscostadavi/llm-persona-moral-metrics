@@ -8,6 +8,8 @@ import csv
 import json
 import os
 import re
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Set, Tuple
@@ -231,6 +233,142 @@ def _write_sampling_rows(output_path: Path, rows_by_key: dict[tuple[int, int, in
     os.replace(tmp_path, output_path)
 
 
+class _ConcurrentSamplingWriter:
+    """Slot-keyed CSV writer for the persona run, safe under a thread pool.
+
+    Rows are appended as they land, which is durable but leaves the file
+    unsorted and possibly holding two rows for a retried slot. ``finalize``
+    rewrites it from the authoritative in-memory dict in sorted slot order via
+    a temp file plus atomic replace, which is the layout the metrics pipeline
+    expects. Finalizing periodically as well as at the end keeps the window in
+    which a crash leaves an unsorted file small; a crash inside that window is
+    still recoverable, because ``_load_existing_sampling_rows`` de-duplicates by
+    slot with last-row-wins.
+    """
+
+    def __init__(
+        self,
+        path: Path,
+        rows_by_key: dict[tuple[int, int, int], dict[str, Any]],
+        finalize_every: int = 2000,
+    ):
+        self.path = path
+        self.rows_by_key = rows_by_key
+        self.finalize_every = finalize_every
+        self._lock = threading.Lock()
+        self._since_finalize = 0
+        self.written = 0
+
+    def append(self, row: Dict[str, Any]) -> None:
+        key = (row["persona_id"], row["question_id"], row["run_index"])
+        with self._lock:
+            new_file = not self.path.exists()
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+            with open(self.path, "a", newline="", encoding="utf-8") as handle:
+                writer = csv.DictWriter(handle, fieldnames=FIELDNAMES)
+                if new_file:
+                    writer.writeheader()
+                writer.writerow(row)
+                handle.flush()
+            self.rows_by_key[key] = row
+            self.written += 1
+            self._since_finalize += 1
+            if self._since_finalize >= self.finalize_every:
+                self._since_finalize = 0
+                _write_sampling_rows(self.path, self.rows_by_key)
+
+    def finalize(self) -> None:
+        with self._lock:
+            _write_sampling_rows(self.path, self.rows_by_key)
+
+
+def run_mfq_sampling_concurrent(
+    personas: List[str],
+    model_type: str,
+    model_name: str,
+    writer: "_ConcurrentSamplingWriter",
+    n: int = 10,
+    workers: int = 8,
+    existing_valid_slots: Optional[Set[Tuple[int, int, int]]] = None,
+    slot_failures: Optional[Dict[Tuple[int, int, int], int]] = None,
+    **model_kwargs,
+) -> Tuple[int, int]:
+    """Thread-pool equivalent of run_mfq_sampling.
+
+    Each (persona, question, repetition) slot is one independent job, so the
+    work parallelizes cleanly: no job reads another job's result, and each slot
+    is touched by exactly one job, so ``slot_failures`` needs no locking.
+
+    Threads help because this is I/O-bound. Every job spends its time blocked on
+    an HTTP call, and Python releases the GIL during blocking I/O, so `workers`
+    requests are genuinely in flight at once.
+
+    Output content is independent of `workers`: only the order rows are appended
+    changes, and finalize normalizes that away.
+    """
+    questions = list(iter_questions())
+    existing_valid_slots = existing_valid_slots or set()
+    slot_failures = slot_failures or {}
+
+    jobs: List[Dict[str, Any]] = []
+    for persona_id, persona in enumerate(personas):
+        persona_text = str(persona)
+        for question in questions:
+            prompt = create_persona_prompt(persona_text, question.prompt)
+            for run_index in range(1, n + 1):
+                slot_key = (persona_id, question.id, run_index)
+                if slot_key in existing_valid_slots:
+                    continue
+                jobs.append({"key": slot_key, "prompt": prompt})
+
+    total_slots = len(personas) * len(questions) * n
+    print(
+        f"{total_slots} slots total, {total_slots - len(jobs)} already valid, "
+        f"{len(jobs)} to run ({workers} workers)",
+        flush=True,
+    )
+    if not jobs:
+        return len(personas), 0
+
+    # Prime the provider's client/tokenizer/renderer cache with one synchronous
+    # call. _MODEL_CACHE in llm_interface is a plain check-then-set dict, so
+    # without this every worker races to build its own client and tokenizer on
+    # the first batch of jobs.
+    get_llm_response(model_type, model_name, jobs[0]["prompt"], **model_kwargs)
+
+    progress_lock = threading.Lock()
+    done = 0
+
+    def worker(job: Dict[str, Any]) -> None:
+        nonlocal done
+        persona_id, question_id, run_index = job["key"]
+        response = get_llm_response(model_type, model_name, job["prompt"], **model_kwargs)
+        rating = extract_rating(response)
+        response_text = response.strip() if isinstance(response, str) else str(response)
+        failures = slot_failures.get(job["key"], 0) + (1 if rating < 0 else 0)
+        writer.append({
+            "persona_id": persona_id,
+            "question_id": question_id,
+            "run_index": run_index,
+            "rating": rating,
+            "failures": failures,
+            "response": response_text,
+            "collected_at": datetime.now().isoformat(),
+        })
+        with progress_lock:
+            done += 1
+            if done % 500 == 0 or done == len(jobs):
+                print(f"  {done}/{len(jobs)} responses", flush=True)
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = [pool.submit(worker, job) for job in jobs]
+        for future in as_completed(futures):
+            future.result()  # surface unexpected worker exceptions
+
+    writer.finalize()
+    return len(personas), writer.written
+
+
 def _load_existing_self_rows(
     output_path: Path,
 ) -> tuple[bool, set[tuple[int, int]], dict[tuple[int, int], int], dict[tuple[int, int], dict[str, Any]]]:
@@ -370,13 +508,29 @@ def parse_args() -> argparse.Namespace:
         "--output",
         type=Path,
         default=None,
-        help="Optional output CSV path. Defaults to data/sampling/<model>_tempXX.csv.",
+        help="Optional output CSV path. Defaults to <data-dir>/<model>_tempXX.csv.",
+    )
+    parser.add_argument(
+        "--data-dir",
+        type=Path,
+        default=None,
+        help="Directory for output CSVs (overrides the default data/insecure-code). "
+             "Used for both persona and --self outputs; ignored if --output is given.",
     )
     parser.add_argument(
         "--self",
         dest="self_mode",
         action="store_true",
         help="Run self-baseline mode: sample responses without persona conditioning.",
+    )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=1,
+        help="Concurrent requests for the persona run (default 1, i.e. the original "
+             "serial path). Output content is identical either way; only collection "
+             "order changes, and that is normalized before the file is finalized. "
+             "Ignored by --self.",
     )
     parser.add_argument("--limit", type=int, default=None, help=argparse.SUPPRESS)
     return parser.parse_args()
@@ -394,9 +548,13 @@ def main() -> None:
     model_kwargs.update(request_kwargs_for_model(selected_model))
     print(f"Selected model: {selected_model['label']} ({model_type}:{model_name})")
 
+    base_dir = args.data_dir or SAMPLING_DIR
+    if args.data_dir is not None:
+        base_dir.mkdir(parents=True, exist_ok=True)
+
     if args.self_mode:
-        output_path = args.output or (
-            SAMPLING_DIR / f"{model_output_stem(selected_model)}_{temperature_tag(args.temperature)}_self.csv"
+        output_path = args.output or resolve_model_filename(
+            selected_model, f"_{temperature_tag(args.temperature)}_self", base_dir
         )
         file_exists, existing_valid_slots, slot_failures, rows_by_key = _load_existing_self_rows(output_path)
         if existing_valid_slots:
@@ -432,11 +590,39 @@ def main() -> None:
         return
 
     print(f"Loaded {len(personas)} personas")
-    output_path = args.output or resolve_sampling_output_path(selected_model, args.temperature)
+    output_path = args.output or resolve_model_filename(
+        selected_model, f"_{temperature_tag(args.temperature)}", base_dir
+    )
 
     file_exists, existing_valid_slots, slot_failures, rows_by_key, had_missing_failures = _load_existing_sampling_rows(output_path)
     if existing_valid_slots:
         print(f"Found {len(existing_valid_slots)} valid existing slots. Only missing or invalid entries will be run.")
+
+    if args.workers > 1:
+        writer = _ConcurrentSamplingWriter(output_path, rows_by_key)
+        personas_processed, responses_written = run_mfq_sampling_concurrent(
+            personas,
+            model_type,
+            model_name,
+            writer,
+            n=args.n,
+            workers=args.workers,
+            existing_valid_slots=set(existing_valid_slots),
+            slot_failures=slot_failures,
+            **model_kwargs,
+        )
+        if responses_written == 0:
+            # Nothing new was collected. Still rewrite if the loader had to patch
+            # missing failure counts, matching the serial path's behavior.
+            if had_missing_failures and rows_by_key:
+                _write_sampling_rows(output_path, rows_by_key)
+            if file_exists:
+                print("\nNo new runs were required; all slots were already filled with valid ratings.")
+        print(
+            f"\nExperiment completed. Processed {personas_processed} personas and "
+            f"logged {responses_written} responses to {output_path}."
+        )
+        return
 
     if file_exists:
         def handle_new_row(row: Dict[str, Any]) -> None:
