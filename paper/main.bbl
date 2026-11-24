@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -59,6 +59,18 @@ Zhuang Chen et~al.
 Davi~Bastos Costa and Renato Vicente.
 \newblock Deceive, detect, and disclose: Large language models play mini-mafia, 2025.
 \newblock URL \url{https://arxiv.org/abs/2509.23023}.
+
+\bibitem[Costa \& Vicente(2026)Costa and Vicente]{costa2026personacollapse}
+Davi~Bastos Costa and Renato Vicente.
+\newblock Persona-model collapse in emergent misalignment, 2026.
+\newblock URL \url{https://arxiv.org/abs/2605.12850}.
+
+\bibitem[Costa et~al.(2025)Costa, Alves, and Vicente]{costa2025llmms}
+Davi~Bastos Costa, Felippe Alves, and Renato Vicente.
+\newblock Llm moral susceptibility: Benchmark, prompts, runners, and analysis.
+\newblock GitHub repository, 2025.
+\newblock URL \url{https://github.com/bastoscostadavi/llm-moral-susceptibility}.
+\newblock Accessed 2025-10-28.
 
 \bibitem[Ge et~al.(2025)Ge, Chan, Wang, Yu, Mi, and Yu]{ge2025scalingsyntheticdatacreation}
 Tao Ge, Xin Chan, Xiaoyang Wang, Dian Yu, Haitao Mi, and Dong Yu.

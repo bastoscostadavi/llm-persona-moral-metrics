@@ -6,3 +6,8 @@ results/sampling_summary_cache_ous/
 # rebuttal reviews / responses (keep private)
 paper/reviews/
 results/sampling_summary_cache_prompt_variations/
+
+.DS_Store
+__pycache__/
+*.pyc
+**/.claude/settings.local.json

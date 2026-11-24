@@ -1,0 +1,172 @@
+\begin{thebibliography}{33}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Abdulhai et~al.(2024)Abdulhai, Serapio-Garc{\'\i}a, Crepy, Valter, Canny, and Jaques}]{abdulhai-etal-2024-moral}
+Marwa Abdulhai, Gregory Serapio-Garc{\'\i}a, Clement Crepy, Daria Valter, John Canny, and Natasha Jaques. 2024.
+\newblock \href {https://doi.org/10.18653/v1/2024.emnlp-main.982} {Moral foundations of large language models}.
+\newblock In \emph{Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing}, pages 17737--17752, Miami, Florida, USA. Association for Computational Linguistics.
+
+\bibitem[{Aksoy(2024)}]{aksoy2024whose}
+Meltem Aksoy. 2024.
+\newblock \href {https://doi.org/10.48550/arXiv.2412.18863} {Whose morality do they speak? unraveling cultural bias in multilingual language models}.
+\newblock \emph{Preprint}, arXiv:2412.18863.
+
+\bibitem[{Bai et~al.(2025{\natexlab{a}})Bai, Peng, Singh, and Tan}]{bai2025concept}
+Xiaoyan Bai, Ike Peng, Aditya Singh, and Chenhao Tan. 2025{\natexlab{a}}.
+\newblock \href {https://doi.org/10.48550/arXiv.2505.14905} {Concept incongruence: An exploration of time and death in role playing}.
+\newblock \emph{Preprint}, arXiv:2505.14905.
+
+\bibitem[{Bai et~al.(2025{\natexlab{b}})Bai, Shrivastava, Holtzman, and Tan}]{bai2025knowthyselfincapabilityimplications}
+Xiaoyan Bai, Aryan Shrivastava, Ari Holtzman, and Chenhao Tan. 2025{\natexlab{b}}.
+\newblock \href {https://arxiv.org/abs/2510.03399} {Know thyself? on the incapability and implications of ai self-recognition}.
+\newblock \emph{Preprint}, arXiv:2510.03399.
+
+\bibitem[{Bai et~al.(2022)Bai, Kadavath, Kundu, Askell, Kernion, Jones, Chen, Goldie, Mirhoseini, McKinnon, Chen, Olsson, Olah, Hernandez, Drain, Ganguli, Li, Tran-Johnson, Perez, Kerr, Mueller, Ladish, Landau, Ndousse, Lukosuite, Lovitt, Sellitto, Elhage, Schiefer, Mercado, DasSarma, Lasenby, Larson, Ringer, Johnston, Kravec, Showk, Fort, Lanham, Telleen-Lawton, Conerly, Henighan, Hume, Bowman, Hatfield-Dodds, Mann, Amodei, Joseph, McCandlish, Brown, and Kaplan}]{bai2022constitutional}
+Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, Carol Chen, Catherine Olsson, Christopher Olah, Danny Hernandez, Dawn Drain, Deep Ganguli, Dustin Li, Eli Tran-Johnson, Ethan Perez, and 32 others. 2022.
+\newblock \href {https://doi.org/10.48550/arXiv.2212.08073} {Constitutional {AI}: Harmlessness from {AI} feedback}.
+\newblock \emph{Preprint}, arXiv:2212.08073.
+
+\bibitem[{Bajpai et~al.(2024)Bajpai, Sameer, and Fatima}]{bajpai2024insights}
+Srajal Bajpai, Ahmed Sameer, and Rabiya Fatima. 2024.
+\newblock \href {https://doi.org/10.21203/rs.3.rs-5336157/v1} {Insights into moral reasoning capabilities of ai: A comparative study between humans and large language models}.
+\newblock Research Square preprint.
+
+\bibitem[{Bianchi et~al.(2024)}]{bianchi2024negotiationarena}
+Federico Bianchi and 1 others. 2024.
+\newblock \href {https://arxiv.org/abs/2402.05863} {How well can llms negotiate? negotiationarena platform and analysis}.
+\newblock \emph{arXiv preprint arXiv:2402.05863}.
+
+\bibitem[{Boudouri et~al.(2025)Boudouri, Nuninger, Alvarez, and Peter}]{elboudouri2025rpeval}
+Yassine~El Boudouri, Walter Nuninger, Julian Alvarez, and Yvan Peter. 2025.
+\newblock \href {https://doi.org/10.48550/arXiv.2505.13157} {Role-playing evaluation for large language models}.
+\newblock \emph{Preprint}, arXiv:2505.13157.
+
+\bibitem[{Cahyawijaya et~al.(2024)Cahyawijaya, Chen, Bang, Khalatbari, Wilie, Ji, Ishii, and Fung}]{cahyawijaya2024highdimension}
+Samuel Cahyawijaya, Delong Chen, Yejin Bang, Leila Khalatbari, Bryan Wilie, Ziwei Ji, Etsuko Ishii, and Pascale Fung. 2024.
+\newblock \href {https://doi.org/10.48550/arXiv.2404.07900} {High-dimension human value representation in large language models}.
+\newblock \emph{Preprint}, arXiv:2404.07900.
+
+\bibitem[{Chen et~al.(2024)}]{chen-etal-2024-tombench}
+Zhuang Chen and 1 others. 2024.
+\newblock \href {https://doi.org/10.18653/v1/2024.acl-long.847} {Tombench: Benchmarking theory of mind in large language models}.
+\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics}.
+
+\bibitem[{Costa and Vicente(2025)}]{costa2025deceivedetectdiscloselarge}
+Davi~Bastos Costa and Renato Vicente. 2025.
+\newblock \href {https://arxiv.org/abs/2509.23023} {Deceive, detect, and disclose: Large language models play mini-mafia}.
+\newblock \emph{Preprint}, arXiv:2509.23023.
+
+\bibitem[{Costa and Vicente(2026)}]{costa2026personacollapse}
+Davi~Bastos Costa and Renato Vicente. 2026.
+\newblock \href {https://arxiv.org/abs/2605.12850} {Persona-model collapse in emergent misalignment}.
+\newblock \emph{Preprint}, arXiv:2605.12850.
+
+\bibitem[{Ge et~al.(2025)Ge, Chan, Wang, Yu, Mi, and Yu}]{ge2025scalingsyntheticdatacreation}
+Tao Ge, Xin Chan, Xiaoyang Wang, Dian Yu, Haitao Mi, and Dong Yu. 2025.
+\newblock \href {https://arxiv.org/abs/2406.20094} {Scaling synthetic data creation with 1,000,000,000 personas}.
+\newblock \emph{Preprint}, arXiv:2406.20094.
+
+\bibitem[{Graham et~al.(2009)Graham, Haidt, and Nosek}]{graham2009liberals}
+Jesse Graham, Jonathan Haidt, and Brian~A. Nosek. 2009.
+\newblock \href {https://doi.org/10.1037/a0015141} {Liberals and conservatives rely on different sets of moral foundations}.
+\newblock \emph{Journal of Personality and Social Psychology}, 96(5):1029--1046.
+
+\bibitem[{Graham et~al.(2011)Graham, Nosek, Haidt, Iyer, Koleva, and Ditto}]{graham2011mfq}
+Jesse Graham, Brian~A. Nosek, Jonathan Haidt, Ravi Iyer, Spassena Koleva, and Peter~H. Ditto. 2011.
+\newblock \href {https://doi.org/10.1037/t05651-000} {Moral foundations questionnaire}.
+\newblock PsycTESTS Dataset.
+
+\bibitem[{Haidt and Graham(2007)}]{haidt2007when}
+Jonathan Haidt and Jesse Graham. 2007.
+\newblock \href {https://doi.org/10.1007/s11211-007-0034-z} {When morality opposes justice: Conservatives have moral intuitions that liberals may not recognize}.
+\newblock \emph{Social Justice Research}, 20(1):98--116.
+
+\bibitem[{Hendrycks et~al.(2021)}]{hendrycks2021ethics}
+Dan Hendrycks and 1 others. 2021.
+\newblock \href {https://arxiv.org/abs/2008.02275} {Aligning ai with shared human values}.
+\newblock In \emph{Proceedings of the International Conference on Learning Representations (ICLR)}.
+
+\bibitem[{Ji et~al.(2025)Ji, Chen, Jin, Xu, Hua, and Zhang}]{ji2025moralbenchmoralevaluationllms}
+Jianchao Ji, Yutong Chen, Mingyu Jin, Wujiang Xu, Wenyue Hua, and Yongfeng Zhang. 2025.
+\newblock \href {https://arxiv.org/abs/2406.04428} {Moralbench: Moral evaluation of llms}.
+\newblock \emph{Preprint}, arXiv:2406.04428.
+
+\bibitem[{Kim et~al.(2025)Kim, Kwon, Vecchietti, Oh, and Cha}]{kim2025moralmachine}
+Jiseon Kim, Jea Kwon, Luiz~Felipe Vecchietti, Alice Oh, and Meeyoung Cha. 2025.
+\newblock \href {https://doi.org/10.48550/arXiv.2504.10886} {Exploring persona-dependent {LLM} alignment for the moral machine experiment}.
+\newblock \emph{Preprint}, arXiv:2504.10886.
+
+\bibitem[{Kova{\v{c}} et~al.(2024)Kova{\v{c}}, Portelas, Sawayama, Dominey, and Oudeyer}]{kovac2024stick}
+Grgur Kova{\v{c}}, R{\'e}my Portelas, Masataka Sawayama, Peter~Ford Dominey, and Pierre-Yves Oudeyer. 2024.
+\newblock \href {https://doi.org/10.48550/arXiv.2402.14846} {Stick to your role! stability of personal values expressed in large language models}.
+\newblock \emph{Preprint}, arXiv:2402.14846.
+
+\bibitem[{Lee et~al.(2024)Lee, Lee, and Cho}]{lee2024inertia}
+Bruce~W. Lee, Yeongheon Lee, and Hyunsoo Cho. 2024.
+\newblock \href {https://arxiv.org/abs/2408.09049} {Inertia in moral and value judgments of large language models}.
+\newblock \emph{Preprint}, arXiv:2408.09049.
+
+\bibitem[{Liu et~al.(2024)Liu, Diab, and Fried}]{liu2024persona}
+Andy Liu, Mona Diab, and Daniel Fried. 2024.
+\newblock \href {https://doi.org/10.48550/arXiv.2405.20253} {Evaluating large language model biases in persona-steered generation}.
+\newblock \emph{Preprint}, arXiv:2405.20253.
+
+\bibitem[{{MFQ}(2017)}]{moralfoundations2017questionnaires}
+{MFQ}. 2017.
+\newblock Moral foundation questionnaires.
+\newblock \url{https://moralfoundations.org/questionnaires/}.
+\newblock Accessed: 2025-10-28.
+
+\bibitem[{Nunes et~al.(2024)Nunes, Almeida, de~Araujo, and Barbosa}]{nunes2024hypocrites}
+Jos{\'e}~Luiz Nunes, Guilherme F. C.~F. Almeida, Marcelo de~Araujo, and Simone D.~J. Barbosa. 2024.
+\newblock \href {https://doi.org/10.48550/arXiv.2405.11100} {Are large language models moral hypocrites? a study based on moral foundations}.
+\newblock \emph{Preprint}, arXiv:2405.11100.
+\newblock Final version appears in the AAAI/ACM Conference on AI, Ethics, and Society (AIES 2024).
+
+\bibitem[{Pan et~al.(2023)}]{pan2023machiavelli}
+Alexander Pan and 1 others. 2023.
+\newblock \href {https://arxiv.org/abs/2304.03279} {Do the rewards justify the means? measuring trade-offs between rewards and ethical behavior in the {MACHIAVELLI} benchmark}.
+\newblock \emph{arXiv preprint arXiv:2304.03279}.
+
+\bibitem[{Pellert et~al.(2024)Pellert, Lechner, Wagner, Rammstedt, and Strohmaier}]{pellert2024aipsychometrics}
+Max Pellert, Clemens~M. Lechner, Claudia Wagner, Beatrice Rammstedt, and Markus Strohmaier. 2024.
+\newblock \href {https://doi.org/10.1177/17456916231214460} {Ai psychometrics: Assessing the psychological profiles of large language models through psychometric inventories}.
+\newblock \emph{Perspectives on Psychological Science}.
+
+\bibitem[{Samuel et~al.(2025)Samuel, Zou, Zhou, Chaudhari, Kalyan, Rajpurohit, Deshpande, Narasimhan, and Murahari}]{samuel2025personagym}
+Vinay Samuel, Henry~Peng Zou, Yue Zhou, Shreyas Chaudhari, Ashwin Kalyan, Tanmay Rajpurohit, Ameet Deshpande, Karthik Narasimhan, and Vishvak Murahari. 2025.
+\newblock \href {https://doi.org/10.48550/arXiv.2407.18416} {Personagym: Evaluating persona agents and llms}.
+\newblock \emph{Preprint}, arXiv:2407.18416.
+\newblock Findings of EMNLP 2025.
+
+\bibitem[{Santurkar et~al.(2023)Santurkar, Durmus, Ladhak, Lee, Liang, and Hashimoto}]{santurkar2023opinions}
+Shibani Santurkar, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. 2023.
+\newblock \href {https://doi.org/10.48550/arXiv.2303.17548} {Whose opinions do language models reflect?}
+\newblock \emph{Preprint}, arXiv:2303.17548.
+
+\bibitem[{Sap et~al.(2019)}]{sap-etal-2019-social}
+Maarten Sap and 1 others. 2019.
+\newblock \href {https://doi.org/10.18653/v1/D19-1454} {Social {IQ}a: Commonsense reasoning about social interactions}.
+\newblock In \emph{Proceedings of EMNLP-IJCNLP}.
+
+\bibitem[{Tseng et~al.(2024)Tseng, Huang, Hsiao, Chen, Huang, Meng, and Chen}]{tseng2024two}
+Yu-Min Tseng, Yu-Chao Huang, Teng-Yun Hsiao, Wei-Lin Chen, Chao-Wei Huang, Yu~Meng, and Yun-Nung Chen. 2024.
+\newblock \href {https://doi.org/10.18653/v1/2024.findings-emnlp.969} {Two tales of persona in {LLM}s: A survey of role-playing and personalization}.
+\newblock In \emph{Findings of the Association for Computational Linguistics: EMNLP 2024}, pages 16612--16631, Miami, Florida, USA. Association for Computational Linguistics.
+
+\bibitem[{Wang et~al.(2023)Wang, Peng, Que, Liu, Zhou, Wu, Guo, Gan, Ni, Yang, Zhang, Zhang, Ouyang, Xu, Huang, Fu, and Peng}]{wang2023rolellm}
+Zekun~Moore Wang, Zhongyuan Peng, Haoran Que, Jiaheng Liu, Wangchunshu Zhou, Yuhan Wu, Hongcheng Guo, Ruitong Gan, Zehao Ni, Jian Yang, Man Zhang, Zhaoxiang Zhang, Wanli Ouyang, Ke~Xu, Stephen~W. Huang, Jie Fu, and Junran Peng. 2023.
+\newblock \href {https://doi.org/10.48550/arXiv.2310.00746} {Rolellm: Benchmarking, eliciting, and enhancing role-playing abilities of large language models}.
+\newblock \emph{Preprint}, arXiv:2310.00746.
+
+\bibitem[{Xu et~al.(2024)Xu, Wang, Chen, Yuan, Yuan, Liang, Chen, Dong, and Xiao}]{xu2024character}
+Rui Xu, Xintao Wang, Jiangjie Chen, Siyu Yuan, Xinfeng Yuan, Jiaqing Liang, Zulong Chen, Xiaoqing Dong, and Yanghua Xiao. 2024.
+\newblock \href {https://doi.org/10.48550/arXiv.2404.12138} {Character is destiny: Can role-playing language agents make persona-driven decisions?}
+\newblock \emph{Preprint}, arXiv:2404.12138.
+
+\bibitem[{Zhou et~al.(2024)}]{zhou2024sotopia}
+Xuhui Zhou and 1 others. 2024.
+\newblock \href {https://arxiv.org/abs/2312.15880} {Sotopia: Interactive evaluation for social intelligence in language agents}.
+\newblock In \emph{Proceedings of the International Conference on Learning Representations (ICLR)}.
+
+\end{thebibliography}

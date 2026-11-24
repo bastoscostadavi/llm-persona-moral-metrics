@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  1 APR 2026 01:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.26)  25 MAY 2026 23:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/davicosta/Desktop/projects/llm-moral-susceptibility/articles/colm2026/main.tex
-(/Users/davicosta/Desktop/projects/llm-moral-susceptibility/articles/colm2026/main.tex
+**/Users/davicosta/Desktop/projects/llm-moral-metrics/paper/main.tex
+(/Users/davicosta/Desktop/projects/llm-moral-metrics/paper/main.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/article.cls
@@ -613,24 +613,24 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 30.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
 ) (/usr/local/texlive/2025basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -652,25 +652,25 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 58.
+Package hyperref Info: Link coloring ON on input line 59.
  (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 58.
-Package microtype Info: Applying patch `item' on input line 58.
-Package microtype Info: Applying patch `toc' on input line 58.
-Package microtype Info: Applying patch `eqnum' on input line 58.
-Package microtype Info: Applying patch `footnote' on input line 58.
-Package microtype Info: Applying patch `verbatim' on input line 58.
-LaTeX Info: Redefining \microtypesetup on input line 58.
+LaTeX Info: Redefining \microtypecontext on input line 59.
+Package microtype Info: Applying patch `item' on input line 59.
+Package microtype Info: Applying patch `toc' on input line 59.
+Package microtype Info: Applying patch `eqnum' on input line 59.
+Package microtype Info: Applying patch `footnote' on input line 59.
+Package microtype Info: Applying patch `verbatim' on input line 59.
+LaTeX Info: Redefining \microtypesetup on input line 59.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 58.
+LaTeX Info: Redefining \showhyphens on input line 59.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -678,23 +678,23 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 \c@lstlisting=\count352
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 66.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 67.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 66.
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 67.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 66.
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 67.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 66.
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 67.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 66.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 67.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
@@ -703,116 +703,112 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 66.
+(Font)              scaled to size 10.42007pt on input line 67.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 66.
+(Font)              scaled to size 7.91925pt on input line 67.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 66.
+(Font)              scaled to size 6.25204pt on input line 67.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 66.
+(Font)              scaled to size 10.42007pt on input line 67.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 66.
+(Font)              scaled to size 7.91925pt on input line 67.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 66.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmss' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for U+fontawesomefree3 on input line 213.
- (/usr/local/texlive/2025basic/texmf-dist/tex/latex/fontawesome5/ufontawesomefree3.fd)
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 213.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 213.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 213.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 213.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 213.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 213.
-LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on input line 213.
- (/usr/local/texlive/2025basic/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd)
+(Font)              scaled to size 6.25204pt on input line 67.
+
 
 [1{/usr/local/texlive/2025basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
-{/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+] (./figures/overview_figure.tex
+LaTeX Font Info:    Trying to load font information for U+fontawesomefree3 on input line 137.
+ (/usr/local/texlive/2025basic/texmf-dist/tex/latex/fontawesome5/ufontawesomefree3.fd)
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 137.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 137.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 137.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 137.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 137.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 137.
+LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on input line 137.
+ (/usr/local/texlive/2025basic/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd))
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [2{/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free3.enc}{/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}]
-<figures/moral_foundations_selected_models_radars.pdf, id=211, 779.21013pt x 177.06888pt>
+<figures/moral_foundations_selected_models_radars.pdf, id=209, 779.21013pt x 177.06888pt>
 File: figures/moral_foundations_selected_models_radars.pdf Graphic file (type pdf)
 <use figures/moral_foundations_selected_models_radars.pdf>
-Package pdftex.def Info: figures/moral_foundations_selected_models_radars.pdf  used on input line 235.
+Package pdftex.def Info: figures/moral_foundations_selected_models_radars.pdf  used on input line 97.
 (pdftex.def)             Requested size: 397.48499pt x 90.32553pt.
-<figures/moral_foundations_persona_shift_radars.pdf, id=216, 779.21013pt x 177.06888pt>
+<figures/moral_foundations_persona_shift_radars.pdf, id=214, 779.21013pt x 177.06888pt>
 File: figures/moral_foundations_persona_shift_radars.pdf Graphic file (type pdf)
 <use figures/moral_foundations_persona_shift_radars.pdf>
-Package pdftex.def Info: figures/moral_foundations_persona_shift_radars.pdf  used on input line 242.
+Package pdftex.def Info: figures/moral_foundations_persona_shift_radars.pdf  used on input line 104.
 (pdftex.def)             Requested size: 397.48499pt x 90.32553pt.
-
-
-[3 <./figures/moral_foundations_selected_models_radars.pdf> <./figures/moral_foundations_persona_shift_radars.pdf>]
-LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 258.
+LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 119.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 293.
+
+[3 <./figures/moral_foundations_selected_models_radars.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 154.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
 
-[4]
+[4 <./figures/moral_foundations_persona_shift_radars.pdf>]
 
 [5]
 <figures/temperature_metrics_from_logprobs_combined.png, id=359, 911.68605pt x 398.56905pt>
 File: figures/temperature_metrics_from_logprobs_combined.png Graphic file (type png)
 <use figures/temperature_metrics_from_logprobs_combined.png>
-Package pdftex.def Info: figures/temperature_metrics_from_logprobs_combined.png  used on input line 333.
+Package pdftex.def Info: figures/temperature_metrics_from_logprobs_combined.png  used on input line 193.
 (pdftex.def)             Requested size: 397.48499pt x 173.77144pt.
-<../../results/plots/robustness_temp01.pdf, id=365, 751.44177pt x 506.43077pt>
-File: ../../results/plots/robustness_temp01.pdf Graphic file (type pdf)
-<use ../../results/plots/robustness_temp01.pdf>
-Package pdftex.def Info: ../../results/plots/robustness_temp01.pdf  used on input line 352.
-(pdftex.def)             Requested size: 194.76982pt x 131.25934pt.
-<../../results/plots/susceptibility_temp01.pdf, id=366, 751.44177pt x 506.43077pt>
-File: ../../results/plots/susceptibility_temp01.pdf Graphic file (type pdf)
-<use ../../results/plots/susceptibility_temp01.pdf>
-Package pdftex.def Info: ../../results/plots/susceptibility_temp01.pdf  used on input line 356.
-(pdftex.def)             Requested size: 194.76982pt x 131.25934pt.
+<figures/robustness_temp01.pdf, id=365, 752.07414pt x 505.34671pt>
+File: figures/robustness_temp01.pdf Graphic file (type pdf)
+<use figures/robustness_temp01.pdf>
+Package pdftex.def Info: figures/robustness_temp01.pdf  used on input line 212.
+(pdftex.def)             Requested size: 194.76982pt x 130.8704pt.
+<figures/susceptibility_temp01.pdf, id=366, 752.07414pt x 505.34671pt>
+File: figures/susceptibility_temp01.pdf Graphic file (type pdf)
+<use figures/susceptibility_temp01.pdf>
+Package pdftex.def Info: figures/susceptibility_temp01.pdf  used on input line 216.
+(pdftex.def)             Requested size: 194.76982pt x 130.8704pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 [6 <./figures/temperature_metrics_from_logprobs_combined.png>]
-<figures/moral_metrics_overall_scatter.pdf, id=375, 483.92543pt x 321.68169pt>
+<figures/moral_metrics_overall_scatter.pdf, id=376, 483.92543pt x 321.68169pt>
 File: figures/moral_metrics_overall_scatter.pdf Graphic file (type pdf)
 <use figures/moral_metrics_overall_scatter.pdf>
-Package pdftex.def Info: figures/moral_metrics_overall_scatter.pdf  used on input line 370.
+Package pdftex.def Info: figures/moral_metrics_overall_scatter.pdf  used on input line 230.
 (pdftex.def)             Requested size: 397.48499pt x 264.22734pt.
 
 
-[7 <../../results/plots/robustness_temp01.pdf> <../../results/plots/susceptibility_temp01.pdf> <./figures/moral_metrics_overall_scatter.pdf>]
-<figures/moral_metrics_foundation_decomposition_radars.pdf, id=538, 850.81204pt x 489.47041pt>
+[7 <./figures/robustness_temp01.pdf> <./figures/susceptibility_temp01.pdf>]
+<figures/moral_metrics_foundation_decomposition_radars.pdf, id=486, 850.81204pt x 489.47041pt>
 File: figures/moral_metrics_foundation_decomposition_radars.pdf Graphic file (type pdf)
 <use figures/moral_metrics_foundation_decomposition_radars.pdf>
-Package pdftex.def Info: figures/moral_metrics_foundation_decomposition_radars.pdf  used on input line 391.
+Package pdftex.def Info: figures/moral_metrics_foundation_decomposition_radars.pdf  used on input line 251.
 (pdftex.def)             Requested size: 397.48499pt x 228.67688pt.
 
 
-[8 <./figures/moral_metrics_foundation_decomposition_radars.pdf>]
-Underfull \vbox (badness 5862) has occurred while \output is active []
+[8 <./figures/moral_metrics_overall_scatter.pdf>]
 
-
-
-[9] (./main.bbl
+[9 <./figures/moral_metrics_foundation_decomposition_radars.pdf>] (./main.bbl
 LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 13.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
@@ -825,70 +821,66 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-[10{/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}])
+[10{/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]
 
-[11]
+[11])
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 7.0pt on input line 438.
- (./supplement/table_moral_foundations_profiles.tex) (./supplement/table_persona_moral_foundations_profiles.tex)
-<figures/moral_foundations_all_models_radars.pdf, id=693, 755.31354pt x 712.77303pt>
+(Font)              scaled to size 7.0pt on input line 301.
+
+
+[12] (./supplement/table_moral_foundations_profiles.tex) (./supplement/table_persona_moral_foundations_profiles.tex)
+<figures/moral_foundations_all_models_radars.pdf, id=701, 755.31354pt x 712.77303pt>
 File: figures/moral_foundations_all_models_radars.pdf Graphic file (type pdf)
 <use figures/moral_foundations_all_models_radars.pdf>
-Package pdftex.def Info: figures/moral_foundations_all_models_radars.pdf  used on input line 498.
+Package pdftex.def Info: figures/moral_foundations_all_models_radars.pdf  used on input line 361.
 (pdftex.def)             Requested size: 397.48499pt x 375.10327pt.
+ (./supplement/table_metric_values_overall.tex) (./supplement/table_metric_values_by_foundation.tex)
 
-Underfull \vbox (badness 1354) has occurred while \output is active []
+[13]
 
-
-
-[12]
-
-[13 <./figures/moral_foundations_all_models_radars.pdf>] (./supplement/table_metric_values_overall.tex) (./supplement/table_metric_values_by_foundation.tex)
-<figures/logprob_imputation_sensitivity.png, id=772, 911.68605pt x 384.11505pt>
+[14 <./figures/moral_foundations_all_models_radars.pdf>]
+<figures/logprob_imputation_sensitivity.png, id=783, 911.68605pt x 384.11505pt>
 File: figures/logprob_imputation_sensitivity.png Graphic file (type png)
 <use figures/logprob_imputation_sensitivity.png>
-Package pdftex.def Info: figures/logprob_imputation_sensitivity.png  used on input line 522.
+Package pdftex.def Info: figures/logprob_imputation_sensitivity.png  used on input line 385.
 (pdftex.def)             Requested size: 397.48499pt x 167.46967pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
+[15 <./figures/logprob_imputation_sensitivity.png>]
 
+[16]
 
-[14]
+[17] (./supplement/failures_by_model.tex)
 
-[15]
-
-[16] (./supplement/failures_by_model.tex)
-
-[17 <./figures/logprob_imputation_sensitivity.png>] (./supplement/appendix_personas.tex
-
-[18]
+[18] (./supplement/appendix_personas.tex
 
 [19]
 
-[20])
+[20]
 
-[21] (./main.aux)
+[21])
+
+[22] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4FF14412989045A08581904C814BF9DC;3541.
+(rerunfilecheck)             Checksum: C89F90E816AFE4A22CE3542CB4524569;3549.
  ) 
 Here is how much of TeX's memory you used:
- 30322 strings out of 473190
- 568790 string characters out of 5713195
- 982504 words of memory out of 5000000
- 52544 multiletter control sequences out of 15000+600000
- 611035 words of font info for 306 fonts, out of 8000000 for 9000
+ 30329 strings out of 473190
+ 568863 string characters out of 5713195
+ 983831 words of memory out of 5000000
+ 52548 multiletter control sequences out of 15000+600000
+ 609289 words of font info for 303 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,18n,87p,1559b,1353s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (21 pages, 822518 bytes).
+ 84i,18n,87p,2000b,1349s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (22 pages, 823171 bytes).
 PDF statistics:
- 1036 PDF objects out of 1200 (max. 8388607)
- 615 compressed objects within 7 object streams
- 205 named destinations out of 1000 (max. 500000)
- 65762 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1039 PDF objects out of 1200 (max. 8388607)
+ 619 compressed objects within 7 object streams
+ 209 named destinations out of 1000 (max. 500000)
+ 61666 words of extra memory for PDF output out of 61914 (max. 10000000)
 
